@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "IMS_Forum_Prototype": {
+    "IMSForumPrototype": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

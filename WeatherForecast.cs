@@ -1,6 +1,6 @@
 using System;
 
-namespace IMS_Forum_Prototype
+namespace IMSForumPrototype
 {
     public class WeatherForecast
     {

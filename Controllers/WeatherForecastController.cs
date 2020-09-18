@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace IMS_Forum_Prototype.Controllers
+namespace IMSForumPrototype.Controllers
 {
     [ApiController]
     [Route("[controller]")]

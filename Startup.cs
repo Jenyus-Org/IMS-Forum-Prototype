@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace IMS_Forum_Prototype
+namespace IMSForumPrototype
 {
     public class Startup
     {
