@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace IMSForumPrototype.Models
 {
-    public class Tutorial : Post
+    public class Tutorial : Post, Taggable
     {
         public int Id { get; }
         public DateTime CreatedAt { get; }
@@ -17,6 +17,8 @@ namespace IMSForumPrototype.Models
         public bool Deleted { get => this.DeletedAt != null; }
         public CommentForest Comments { get; set; }
 
+        public List<Tag> Tags = new List<Tag>();
+
         public Tutorial(int id, DateTime createdAt, User createdBy, string body, User author)
         {
             this.Id = id;
@@ -24,6 +26,15 @@ namespace IMSForumPrototype.Models
             this.CreatedBy = createdBy;
             this.Body = body;
             this.Author = author;
+        }
+
+        public void AddTag(Tag tag) => this.Tags.Add(tag);
+
+        public bool RemoveTag(Tag tag)
+        {
+            int tagCountOriginal = this.Tags.Count;
+            this.Tags = this.Tags.FindAll(t => t.Id != tag.Id);
+            return tagCountOriginal != this.Tags.Count;
         }
     }
 }
