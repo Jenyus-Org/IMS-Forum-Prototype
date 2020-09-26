@@ -17,7 +17,7 @@ namespace IMSForumPrototype.Models
         public bool Deleted { get => this.DeletedAt != null; }
         public CommentForest Comments { get; set; }
 
-        public List<Tag> Tags = new List<Tag>();
+        public List<Tag> Tags { get; } = new List<Tag>();
 
         public Tutorial(int id, DateTime createdAt, User createdBy, string body, User author)
         {
