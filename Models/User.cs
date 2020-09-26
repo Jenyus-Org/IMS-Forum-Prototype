@@ -8,7 +8,8 @@ namespace IMSForumPrototype.Models
         public DateTime CreatedAt { get; }
         public User CreatedBy { get; }
         public DateTime DeletedAt { get; set; }
-        public bool Deleted { get => this.DeletedAt != null; }
+        public User DeletedBy { get; set; }
+        public bool Deleted { get => this.DeletedAt != null && this.DeletedBy != null; }
         public string Username { get; set; }
         public string Password { get; set; }
 

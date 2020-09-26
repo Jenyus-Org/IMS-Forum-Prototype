@@ -14,7 +14,8 @@ namespace IMSForumPrototype.Models
         public bool Removed { get => this.RemovedBy != null; }
         public User RemovedBy { get; set; }
         public DateTime DeletedAt { get; set; }
-        public bool Deleted { get => this.DeletedAt != null; }
+        public User DeletedBy { get; set; }
+        public bool Deleted { get => this.DeletedAt != null && this.DeletedBy != null; }
         public CommentForest Comments { get; set; }
 
         public List<Tag> Tags { get; } = new List<Tag>();
@@ -30,11 +31,6 @@ namespace IMSForumPrototype.Models
 
         public void AddTag(Tag tag) => this.Tags.Add(tag);
 
-        public bool RemoveTag(Tag tag)
-        {
-            int tagCountOriginal = this.Tags.Count;
-            this.Tags = this.Tags.FindAll(t => t.Id != tag.Id);
-            return tagCountOriginal != this.Tags.Count;
-        }
+        public bool RemoveTag(Tag tag) => this.Tags.Remove(tag);
     }
 }

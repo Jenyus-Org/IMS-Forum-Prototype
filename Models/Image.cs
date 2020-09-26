@@ -10,7 +10,8 @@ namespace IMSForumPrototype.Models
         public bool Removed { get => this.RemovedBy != null; }
         public User RemovedBy { get; set; }
         public DateTime DeletedAt { get; set; }
-        public bool Deleted { get => this.DeletedAt != null; }
+        public User DeletedBy { get; set; }
+        public bool Deleted { get => this.DeletedAt != null && this.DeletedBy != null; }
 
         public Image(int id, DateTime createdAt, User createdBy)
         {

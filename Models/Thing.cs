@@ -8,6 +8,7 @@ namespace IMSForumPrototype.Models
         DateTime CreatedAt { get; }
         User CreatedBy { get; }
         DateTime DeletedAt { get; set; }
+        User DeletedBy { get; set; }
         bool Deleted { get; }
     }
 }

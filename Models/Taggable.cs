@@ -4,7 +4,7 @@ namespace IMSForumPrototype.Models
 {
     public interface Taggable
     {
-        List<Tag> Tags { get; }
+        List<Tag> Tags { get; set; }
 
         void AddTag(Tag tag);
 

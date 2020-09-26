@@ -8,12 +8,13 @@ namespace IMSForumPrototype.Models
         public DateTime CreatedAt { get; }
         public User CreatedBy { get; }
         public Thing Parent { get; }
-        string Body { get; set; }
+        public string Body { get; set; }
         public User Author { get; }
         public bool Removed { get => this.RemovedBy != null; }
         public User RemovedBy { get; set; }
         public DateTime DeletedAt { get; set; }
-        public bool Deleted { get => this.DeletedAt != null; }
+        public User DeletedBy { get; set; }
+        public bool Deleted { get => this.DeletedAt != null && this.DeletedBy != null; }
 
         public Comment(int id, DateTime createdAt, User createdBy, string body, User author)
         {
