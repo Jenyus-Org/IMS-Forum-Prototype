@@ -1,0 +1,12 @@
+{
+  "name": "api-sdk",
+  "version": "1.0.0",
+  "description": "API SDK for the IMS forum prototype.",
+  "repository": "https://github.com/Jenyus-Org/IMSForumPrototype",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Jenyus",
+  "license": "GPL-3.0-or-later",
+  "private": false
+}
