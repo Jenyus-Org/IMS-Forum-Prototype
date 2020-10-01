@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using IMSForumPrototype.Models.Data.Users;
 
-namespace IMSForumPrototype.Models
+namespace IMSForumPrototype.Models.Data.Posts.Tutorials
 {
     public class Tutorial : Post, Taggable
     {

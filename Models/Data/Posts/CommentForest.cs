@@ -1,8 +1,11 @@
 using System;
+using System.Collections.Generic;
+using IMSForumPrototype.Models.Data.Comments;
+using IMSForumPrototype.Models.Data.Users;
 
-namespace IMSForumPrototype.Models
+namespace IMSForumPrototype.Models.Data.Posts
 {
-    public class Tag : Thing
+    public class CommentForest : Thing
     {
         public int Id { get; }
         public DateTime CreatedAt { get; }
@@ -10,14 +13,13 @@ namespace IMSForumPrototype.Models
         public DateTime DeletedAt { get; set; }
         public User DeletedBy { get; set; }
         public bool Deleted { get => this.DeletedAt != null && this.DeletedBy != null; }
-        public string Text { get; }
+        public List<Comment> Comments { get; } = new List<Comment>();
 
-        public Tag(int id, DateTime createdAt, User createdBy, string text)
+        public CommentForest(int id, DateTime createdAt, User createdBy)
         {
             this.Id = id;
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
-            this.Text = text;
         }
     }
 }

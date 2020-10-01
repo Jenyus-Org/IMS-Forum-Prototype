@@ -1,4 +1,6 @@
-namespace IMSForumPrototype.Models
+using IMSForumPrototype.Models.Data.Users;
+
+namespace IMSForumPrototype.Models.Data.Posts
 {
     public interface Post : Thing
     {

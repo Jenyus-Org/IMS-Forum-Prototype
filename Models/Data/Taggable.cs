@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace IMSForumPrototype.Models
+namespace IMSForumPrototype.Models.Data
 {
     public interface Taggable
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace IMSForumPrototype.Models
+namespace IMSForumPrototype.Models.Data.Users
 {
     public class User : Thing
     {

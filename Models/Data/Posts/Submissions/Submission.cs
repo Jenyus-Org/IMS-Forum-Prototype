@@ -1,6 +1,7 @@
 using System;
+using IMSForumPrototype.Models.Data.Users;
 
-namespace IMSForumPrototype.Models
+namespace IMSForumPrototype.Models.Data.Posts.Submissions
 {
     public class Submission : Post
     {
