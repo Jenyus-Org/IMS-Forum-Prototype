@@ -2,18 +2,20 @@
   <div id="app">
     <Navigation/>
     <Header/>
+    <Footer/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import {Header, Navigation} from '@/components/index';
+import {Header, Navigation, Footer} from '@/components/index';
 
   export default{
     name: "App",
     components:{
       Header,
-      Navigation
+      Navigation,
+      Footer
     }
   }
 </script>
