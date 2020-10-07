@@ -11,12 +11,14 @@
           >
         </div>
         <div class="align-bottom">
-          <router-link
-            class="nav-link"
-            exact-active-class="active"
-            to="settings"
-            >Settings</router-link
-          >
+          <div class="settings">
+            <FontAwesomeIcon class="icon fa-lg" icon="cogs" />
+            <router-link
+              class="nav-link"
+              to="settings"
+              >Settings</router-link
+            >
+          </div>
         </div>
       </div>
     </Sidebar>
@@ -25,6 +27,7 @@
 
 <script>
 import Sidebar from "./Sidebar";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
   name: "Navigaton",
@@ -38,6 +41,7 @@ export default {
   },
   components: {
     Sidebar,
+    FontAwesomeIcon,
   },
 };
 </script>
@@ -50,10 +54,14 @@ export default {
   text-align: start;
 }
 .nav-link {
+  width:100%;
   color: var(--dark-font-colour);
   border-left: solid 5px transparent;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  padding:5px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 .nav-link:hover {
   background-color: var(--light-primary);
@@ -62,13 +70,19 @@ export default {
   color: var(--dark-primary);
   border-left: solid 5px var(--primary);
 }
-.align-top{
-  width:100%;
+.align-top {
+  width: 100%;
 }
-.align-bottom{
-  width:100px;
-  position:absolute;
-  bottom:10px;
-  left:10;
+.align-bottom {
+  width:90%;
+  position: absolute;
+  bottom: 10px;
+}
+.settings{
+  display:flex;
+}
+.icon{
+  position:relative;
+  top:12px;
 }
 </style>

@@ -7,6 +7,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret, faCogs} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserSecret)
+library.add(faCogs)
 Vue.config.productionTip = false
 
 new Vue({
