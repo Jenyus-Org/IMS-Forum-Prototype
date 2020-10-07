@@ -13,9 +13,11 @@ export default {
 <style scoped>
     .footer{
         position:fixed;
-        bottom: 0%;
+        bottom: 0;
         height:50px;
         width:100%;
-        border: solid 1px black;
+        border-top: solid 1px black;
+        display:flex;
+        justify-content: space-around;
     }
 </style>

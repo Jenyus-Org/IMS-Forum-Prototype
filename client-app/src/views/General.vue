@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :class="{'activenavbar': this.$store.state.activeNav}">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -13,6 +13,8 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  methods:{
   }
 }
 </script>

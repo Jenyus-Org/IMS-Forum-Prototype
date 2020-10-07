@@ -1,0 +1,23 @@
+:root{
+  --primary: #43a047;
+  --dark-primary: #00701a;
+  --light-primary: #e8f5e9;
+  --secondary: #bdbdbd;
+  --light-secondary: #bdbdbd;
+  --dark-secondary: #8d8d8d;
+  --font-colour: #424242;
+  --light-font-colour: #e0e0e0;
+  --dark-font-colour: #1b1b1b;
+}
+
+*{
+  color: var(--font-colour);
+}
+.activenavbar{
+  width:90%;
+  position: relative;
+  left:10%;
+}
+.home{
+  margin-bottom:50px;
+}

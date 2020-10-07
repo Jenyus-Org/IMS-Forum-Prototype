@@ -1,5 +1,20 @@
 <template>
   <div>
+    <div class="header-logo">
+      <div
+        id="burger"
+        :class="{ active: this.$store.state.activeNav }"
+        @click.prevent="toggle"
+      >
+        <slot>
+          <button type="button" class="burger-button" title="Menu">
+            <span class="burger-bar burger-bar--1"></span>
+            <span class="burger-bar burger-bar--2"></span>
+            <span class="burger-bar burger-bar--3"></span>
+          </button>
+        </slot>
+      </div>
+    </div>
     <div v-if="loggedIn" class="header">
       <p>Header logged In</p>
     </div>
@@ -14,9 +29,14 @@ export default {
   name: "Header",
   data() {
     return {
-      loggedIn: false,
+      loggedIn: false
     };
   },
+  methods:{
+    toggle(){
+      this.$store.dispatch("changeNavVisibility", !this.$store.state.activeNav);
+    }
+  }
 };
 </script>
 
@@ -30,8 +50,16 @@ export default {
   text-align: right;
   text-decoration: underline;
   position:relative;
-  transform: translate(450px, -14px);
+  transform: translate(20%, -14px);
   top:50%;
   right:40%;
+}
+.header-logo {
+  position:absolute;
+  height: 50px;
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left:10px;
 }
 </style>

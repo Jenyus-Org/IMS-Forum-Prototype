@@ -1,78 +1,74 @@
 <template>
   <div>
-    <div class="navigation" v-if="loggedIn">
-      <div class="navi">
-        <div class="header-logo">
-          <p>IMS-Forum</p>
+    <Sidebar>
+      <div class="sidenav-links">
+        <div class="align-top">
+          <router-link class="nav-link" exact-active-class="active" to="/"
+            >Home</router-link
+          >
+          <router-link class="nav-link" exact-active-class="active" to="about"
+            >About</router-link
+          >
         </div>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">General</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link tclass="nav-link" to="/about">About</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="navigation" v-else>
-      <div class="navi">
-        <div class="header-logo">
-          <p>IMS-Forum</p>
+        <div class="align-bottom">
+          <router-link
+            class="nav-link"
+            exact-active-class="active"
+            to="settings"
+            >Settings</router-link
+          >
         </div>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/">General</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/about">About</router-link>
-          </li>
-        </ul>
       </div>
-    </div>
+    </Sidebar>
   </div>
 </template>
 
 <script>
+import Sidebar from "./Sidebar";
+
 export default {
   name: "Navigaton",
   data() {
-    return {
-      loggedIn: false,
-    };
+    return {};
+  },
+  methods: {
+    toggle() {
+      this.$store.dispatch("changeNavVisibility", !this.$store.state.activeNav);
+    },
+  },
+  components: {
+    Sidebar,
   },
 };
 </script>
 
 <style scoped>
-.navigation {
-  width: 15%;
-  height: 100vh;
-  min-width: 300px;
-  position: absolute;
-}
-.navi {
-  height: inherit;
-  background-color: lightgrey;
-}
+@import "../assets/css/nav.css";
 
-.nav-item:hover{
-  border: solid 1px #0a200d;
-  background-color: rgb(76, 179, 76)
+.sidenav-links {
+  display: block;
+  text-align: start;
 }
-
-.active{
-  border-left: solid 8px #0a200d;
+.nav-link {
+  color: var(--dark-font-colour);
+  border-left: solid 5px transparent;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-
-.header-logo {
-  height: 50px;
-  border-bottom: solid 1px black;
-  width: 100%;
+.nav-link:hover {
+  background-color: var(--light-primary);
 }
-.header-logo p {
-  position: relative;
-  transform: translateY(-14px);
-  top: 50%;
+.active {
+  color: var(--dark-primary);
+  border-left: solid 5px var(--primary);
+}
+.align-top{
+  width:100%;
+}
+.align-bottom{
+  width:100px;
+  position:absolute;
+  bottom:10px;
+  left:10;
 }
 </style>
