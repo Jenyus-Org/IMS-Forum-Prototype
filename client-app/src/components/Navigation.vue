@@ -13,9 +13,7 @@
         <div class="align-bottom">
           <div class="settings">
             <FontAwesomeIcon class="icon fa-lg" icon="cogs" />
-            <router-link
-              class="nav-link"
-              to="settings"
+            <router-link class="nav-link-settings" to="settings"
               >Settings</router-link
             >
           </div>
@@ -54,35 +52,45 @@ export default {
   text-align: start;
 }
 .nav-link {
-  width:100%;
+  width: 100%;
   color: var(--dark-font-colour);
   border-left: solid 5px transparent;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding:5px;
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .nav-link:hover {
-  background-color: var(--light-primary);
+  background-color: var(--secondary);
 }
 .active {
   color: var(--dark-primary);
-  border-left: solid 5px var(--primary);
+  border-left: solid 5px var(--dark-primary);
 }
 .align-top {
   width: 100%;
 }
 .align-bottom {
-  width:90%;
+  width: 90%;
   position: absolute;
   bottom: 10px;
 }
-.settings{
-  display:flex;
+.settings {
+  display: flex;
 }
-.icon{
-  position:relative;
-  top:12px;
+.nav-link-settings{
+  width: 100%;
+  color: var(--dark-font-colour);
+  border-left: solid 5px transparent;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.icon {
+  position: relative;
+  top: 12px;
 }
 </style>

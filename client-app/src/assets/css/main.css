@@ -3,7 +3,7 @@
   --dark-primary: #00701a;
   --light-primary: #e8f5e9;
   --secondary: #bdbdbd;
-  --light-secondary: #bdbdbd;
+  --light-secondary: #e9e9e9;
   --dark-secondary: #8d8d8d;
   --font-colour: #424242;
   --light-font-colour: #e0e0e0;
@@ -14,10 +14,12 @@
   color: var(--font-colour);
 }
 .activenavbar{
-  width:90%;
+  width: calc(100% - 200px) !important;
   position: relative;
-  left:10%;
+  left:200px;
 }
 .home{
-  margin-bottom:50px;
+  position: relative;
+  top:50px;
+  height:100vh;
 }

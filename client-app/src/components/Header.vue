@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="header-logo">
+  <div class="header">
+    <div class="header-content">
       <div
         id="burger"
         :class="{ active: this.$store.state.activeNav }"
@@ -15,11 +15,11 @@
         </slot>
       </div>
     </div>
-    <div v-if="loggedIn" class="header">
+    <div v-if="loggedIn" class="header-content text">
       <p>Header logged In</p>
     </div>
-    <div v-else class="header">
-      <p>SignIn</p>
+    <div v-else class="header-content text">
+      <a href="/signIn">SignIn</a>
     </div>
   </div>
 </template>
@@ -29,37 +29,37 @@ export default {
   name: "Header",
   data() {
     return {
-      loggedIn: false
+      loggedIn: false,
     };
   },
-  methods:{
-    toggle(){
+  methods: {
+    toggle() {
       this.$store.dispatch("changeNavVisibility", !this.$store.state.activeNav);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.header{
+.header {
+  position: fixed;
   width: 100%;
-  height:50px;
-  border-bottom: solid 1px black;
-}
-.header p{
-  text-align: right;
-  text-decoration: underline;
-  position:relative;
-  transform: translate(20%, -14px);
-  top:50%;
-  right:40%;
-}
-.header-logo {
-  position:absolute;
-  height: 50px;
-  width: 20%;
+  z-index: 999;
   display: flex;
-  justify-content: flex-start;
-  margin-left:10px;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: var(--dark-primary);
+  height: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.text {
+  align-self: center;
+}
+.text a {
+  color: var(--light-font-colour);
+}
+.header-content {
+  flex: 1;
 }
 </style>

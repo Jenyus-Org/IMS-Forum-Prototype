@@ -41,14 +41,15 @@ export default {
   overflow-y: auto;
   background-color: #e0e0e0;
   opacity: 0.8;
-  position: fixed;
+  position: absolute;
   left: 0;
-  top: 50px;
-  bottom: 50px;
+  top:50px;
+  height:calc(100vh - 50px);
   border-top-right-radius: 5px;
-  z-index: 999;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
   padding: 1rem 10px 2rem 10px;
-  width: 10%;
+  width: 200px;
   min-width: 150px;
 }
 </style>

@@ -1,20 +1,38 @@
 <template>
-  <div class="home" :class="{'activenavbar': this.$store.state.activeNav}">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Header />
+    <Navigation />
+    <div class="home">
+      <div @click="toggleNav()" class="view" :class="{ activenavbar: this.$store.state.activeNav }">
+        <router-view />
+      </div>
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld'
+import { Header, Navigation, Footer } from "@/components/index";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    Header,
+    Navigation,
+    Footer,
   },
-  methods:{
-  }
-}
+  methods: {
+    toggleNav() {
+      this.$store.dispatch("changeNavVisibility", false);
+    },
+  },
+};
 </script>
+<style scoped>
+.view {
+  padding-top:10px;
+  height:100vh;
+  width:100%;
+}
+</style>

@@ -27,7 +27,7 @@
     }
 
     .burger-bar {
-        background-color: #130f40;
+        background-color: var(--light-font-colour);
         position: absolute;
         top: 50%;
         right: 6px;
@@ -60,13 +60,18 @@
         transform: translateY(6px);
     }
 
+    #burger{
+      align-self:center;
+      position:relative;
+      top:5px;
+    }
 
     #burger.active .burger-button {
         transform: rotate(-180deg);
     }
 
     #burger.active .burger-bar {
-        background-color: var(--dark);
+        background-color: var(--light-font-colour);
     }
 
     #burger.active .burger-bar--1 {

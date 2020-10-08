@@ -1,23 +1,14 @@
 <template>
   <div id="app">
-    <Navigation />
-    <Header />
-    <Footer />
-    <div @click="toggleNav()" class="view">
       <router-view />
-    </div>
   </div>
 </template>
 
 <script>
-import { Header, Navigation, Footer } from "@/components/index";
 
 export default {
   name: "App",
   components: {
-    Header,
-    Navigation,
-    Footer,
   },
   methods: {
     toggleNav() {
@@ -41,9 +32,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-.view{
-  height:100vh;
-  width:100%;
 }
 </style>
