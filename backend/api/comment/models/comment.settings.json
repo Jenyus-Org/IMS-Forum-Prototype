@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "parent_post": {
+      "model": "post",
+      "via": "comments"
+    },
+    "parent_comment": {
+      "model": "comment",
+      "via": "comments"
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "parent_comment"
+    },
+    "parent_tutorial": {
+      "via": "comments",
+      "model": "tutorial"
+    },
+    "author": {
+      "via": "comments",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
