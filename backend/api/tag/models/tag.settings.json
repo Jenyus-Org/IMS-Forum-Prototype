@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "Tag"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "tutorial": {
+      "via": "tags",
+      "model": "tutorial"
+    }
+  }
+}
