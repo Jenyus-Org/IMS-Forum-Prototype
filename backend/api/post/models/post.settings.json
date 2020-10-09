@@ -14,13 +14,16 @@
       "required": true
     },
     "comments": {
-      "via": "parent_post",
-      "collection": "comment"
+      "collection": "comment",
+      "via": "parent_post"
     },
     "author": {
-      "via": "posts",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "posts"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

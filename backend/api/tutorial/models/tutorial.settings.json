@@ -21,9 +21,12 @@
       "via": "tutorial"
     },
     "author": {
-      "via": "tutorials",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "tutorials"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

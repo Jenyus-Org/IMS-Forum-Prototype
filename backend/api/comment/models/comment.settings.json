@@ -13,8 +13,8 @@
       "type": "richtext"
     },
     "parent_post": {
-      "model": "post",
-      "via": "comments"
+      "via": "comments",
+      "model": "post"
     },
     "parent_comment": {
       "model": "comment",
