@@ -8,5 +8,7 @@
   },
   "author": "Jenyus",
   "license": "GPL-3.0-or-later",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "axios": "^0.20.0"
 }
