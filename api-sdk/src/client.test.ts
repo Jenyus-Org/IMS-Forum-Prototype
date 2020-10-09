@@ -14,7 +14,7 @@ describe("Strapi client SDK.", () => {
         email: "test@test.com",
         password: "test123",
       });
-      expect(resp.username).to.equal("TestUser");
+      expect(resp.username).to.be.equal("TestUser");
     } catch (error) {
       expect(error).to.be.an.instanceOf(EmailAlreadyTakenError);
     }
@@ -28,7 +28,7 @@ describe("Strapi client SDK.", () => {
         identifier: "test@test.com",
         password: "test123",
       });
-      expect(resp.username).to.equal("TestUser");
+      expect(resp.username).to.be.equal("TestUser");
     } catch (error) {
       console.error(error);
     }
