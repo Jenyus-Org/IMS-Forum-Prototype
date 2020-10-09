@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
-import BaseError from "./baseError";
+import BaseError from "../baseError";
 import Posts from "./posts";
-import strapiErrors from "./strapiErrors";
+import strapiErrors from "../strapiErrors";
 
 export class EmailAlreadyTakenError extends BaseError {
   constructor(public message: string) {

@@ -1,4 +1,4 @@
-import Client from ".";
+import Client from "./client";
 
 export default class Posts {
   constructor(private client: Client) {}
