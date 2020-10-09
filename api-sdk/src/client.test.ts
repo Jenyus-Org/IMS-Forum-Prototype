@@ -16,7 +16,22 @@ describe("Strapi client SDK.", () => {
       });
       expect(resp.username).to.equal("TestUser");
     } catch (error) {
-      expect(error).to.be.instanceOf(EmailAlreadyTakenError);
+      expect(error).to.be.an.instanceOf(EmailAlreadyTakenError);
     }
+  });
+
+  it("Should be able to login with the user credentials", async () => {
+    const client = new Client();
+    let resp;
+    try {
+      resp = await client.login({
+        identifier: "test@test.com",
+        password: "test123",
+      });
+      expect(resp.username).to.equal("TestUser");
+    } catch (error) {
+      console.error(error);
+    }
+    expect(resp).to.be.an.instanceOf(Object);
   });
 });
