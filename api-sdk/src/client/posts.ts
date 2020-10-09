@@ -1,3 +1,4 @@
+import Post from "../models/post";
 import Client from "./client";
 
 export default class Posts {
@@ -5,7 +6,9 @@ export default class Posts {
 
   public async get() {
     const data = await this.client.get("/posts");
-    return data;
+    return data.map(
+      (d: any) => new Post({ id: d.id, client: this.client, ...d })
+    );
   }
 
   public async create({ title, body }: { title: string; body: string }) {
