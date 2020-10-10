@@ -14,8 +14,8 @@
       "required": true
     },
     "comments": {
-      "via": "parentPost",
-      "collection": "comment"
+      "collection": "comment",
+      "via": "parentPost"
     },
     "author": {
       "plugin": "users-permissions",
@@ -24,6 +24,17 @@
     },
     "title": {
       "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

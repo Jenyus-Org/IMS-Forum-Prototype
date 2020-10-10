@@ -30,8 +30,8 @@
       "via": "comments"
     },
     "parentPost": {
-      "model": "post",
-      "via": "comments"
+      "via": "comments",
+      "model": "post"
     }
   }
 }
