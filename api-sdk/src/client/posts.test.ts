@@ -4,7 +4,7 @@ import Client from "./client";
 
 const expect = chai.expect;
 
-describe("Strapi client SDK.", () => {
+describe("Post Helper", () => {
   it("Should be able to request posts.", async () => {
     const client = new Client();
     client

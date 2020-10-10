@@ -3,7 +3,7 @@ import Client, { EmailAlreadyTakenError } from "./client";
 
 const expect = chai.expect;
 
-describe("Strapi client SDK.", () => {
+describe("Strapi Client", () => {
   it("Should be able to register users.", async () => {
     const client = new Client();
     let resp;

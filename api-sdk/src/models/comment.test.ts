@@ -3,7 +3,7 @@ import Client from "../client";
 
 const expect = chai.expect;
 
-describe("Strapi client SDK.", () => {
+describe("Comment", () => {
   it("Should be able to comment under comments.", async () => {
     const client = new Client();
     client

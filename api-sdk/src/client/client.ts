@@ -3,6 +3,7 @@ import BaseError from "../baseError";
 import strapiErrors from "../strapiErrors";
 import Comments from "./comments";
 import Posts from "./posts";
+import Users from "./users";
 
 export class EmailAlreadyTakenError extends BaseError {
   constructor(public message: string) {
@@ -16,6 +17,7 @@ export default class Client {
   public user?: any;
   public posts: Posts;
   public comments: Comments;
+  public users: Users;
 
   constructor(private basePath: string = "http://localhost:1337/") {
     this.requestor = axios.create({
@@ -23,6 +25,7 @@ export default class Client {
     });
     this.posts = new Posts(this);
     this.comments = new Comments(this);
+    this.users = new Users(this);
   }
 
   public async register(creds: {
