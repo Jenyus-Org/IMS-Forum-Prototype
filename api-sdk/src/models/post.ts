@@ -43,5 +43,6 @@ export default class Post {
   public async fetch() {
     const data = await this.client.get("/posts/" + this.id);
     Object.assign(this, data);
+    return this;
   }
 }

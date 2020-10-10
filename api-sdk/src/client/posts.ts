@@ -8,8 +8,7 @@ export default class Posts {
   public async get(id: number): Promise<Post>;
   public async get(id?: number) {
     if (id) {
-      const data = await this.client.get("/posts/" + id);
-      return new Post({ client: this.client, ...data });
+      return await new Post({ client: this.client, id }).fetch();
     } else {
       const data = await this.client.get("/posts");
       return data.map((d: any) => new Post({ client: this.client, ...d }));

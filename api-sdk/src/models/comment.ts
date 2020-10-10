@@ -56,5 +56,6 @@ export default class Comment {
   public async fetch() {
     const data = await this.client.get("/comments/" + this.id);
     Object.assign(this, data);
+    return this;
   }
 }
