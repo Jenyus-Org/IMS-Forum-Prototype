@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import BaseError from "../baseError";
+import User from "../models/user";
 import strapiErrors from "../strapiErrors";
 import Comments from "./comments";
 import Posts from "./posts";
@@ -14,7 +15,7 @@ export class EmailAlreadyTakenError extends BaseError {
 export default class Client {
   private requestor: AxiosInstance;
   private token?: string;
-  public user?: any;
+  public user?: User;
   public posts: Posts;
   public comments: Comments;
   public users: Users;
@@ -33,12 +34,10 @@ export default class Client {
     email: string;
     password: string;
   }) {
-    let user;
     try {
       let resp = await this.requestor.post("/auth/local/register", creds);
       this.token = resp.data.jwt;
-      this.user = resp.data.user;
-      user = resp.data.user;
+      this.user = new User({ client: this, ...resp.data.user });
     } catch (error) {
       for (const data of error.response.data.message) {
         for (const message of data.messages) {
@@ -52,42 +51,41 @@ export default class Client {
       }
       throw error;
     }
-    return user;
+    return this.user;
   }
 
   public async login(creds: { identifier: string; password: string }) {
-    let user;
     try {
       const resp = await this.requestor.post("/auth/local", creds);
-      user = resp.data.user;
       this.token = resp.data.jwt;
-      this.user = resp.data.user;
-      user = resp.data.user;
+      this.user = new User({ client: this, ...resp.data.user });
     } catch (error) {
       console.error("An error occured:", error.response);
       throw error;
     }
-    return user;
+    return this.user;
   }
 
   private addHeadersToConfig(config?: any) {
-    let headers = {
-      Authorization: `Bearer ${this.token}`,
-    };
-
-    if (config) {
-      if (config.headers) {
-        config.headers = {
-          ...config.headers,
-          ...headers,
-        };
-      } else {
-        config.headers = headers;
-      }
-    } else {
-      config = {
-        headers,
+    if (this.token) {
+      let headers = {
+        Authorization: `Bearer ${this.token}`,
       };
+
+      if (config) {
+        if (config.headers) {
+          config.headers = {
+            ...config.headers,
+            ...headers,
+          };
+        } else {
+          config.headers = headers;
+        }
+      } else {
+        config = {
+          headers,
+        };
+      }
     }
 
     return config;
