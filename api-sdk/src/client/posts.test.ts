@@ -38,7 +38,7 @@ describe("Post Helper", () => {
         } catch (error) {
           console.error(error);
         }
-        expect(resp).to.be.an.instanceOf(Object);
+        expect(resp).to.be.an.instanceOf(Post);
       });
   });
 });

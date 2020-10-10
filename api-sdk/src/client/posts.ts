@@ -21,6 +21,6 @@ export default class Posts {
       body,
       author: this.client.user.id,
     });
-    return data;
+    return new Post({ client: this.client, ...data });
   }
 }
