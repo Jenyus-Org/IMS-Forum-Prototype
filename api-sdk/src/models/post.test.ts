@@ -27,13 +27,9 @@ describe("Post", () => {
   });
   it("Should be able to read a post's author.", async () => {
     const client = new Client();
-    client
-      .login({ identifier: "TestUser", password: "test123" })
-      .then(async () => {
-        client.posts.get(1).then(async (post) => {
-          await post.author?.fetch();
-          expect(post.author.username).to.be.equal("TestUser");
-        });
-      });
+    client.posts.get(1).then(async (post) => {
+      await post.author?.fetch();
+      expect(post.author.username).to.be.equal("TestUser");
+    });
   });
 });

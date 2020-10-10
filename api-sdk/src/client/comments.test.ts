@@ -7,20 +7,13 @@ const expect = chai.expect;
 describe("Comment Helper", () => {
   it("Should be able to request comments.", async () => {
     const client = new Client();
-    client
-      .login({ identifier: "TestUser", password: "test123" })
-      .then(async () => {
-        let resp;
-
-        try {
-          resp = await client.comments.get();
-          resp.forEach((comment) =>
-            expect(comment).to.be.an.instanceOf(Comment)
-          );
-        } catch (error) {
-          console.error(error);
-        }
-        expect(resp).to.be.an.instanceOf(Array);
-      });
+    let resp;
+    try {
+      resp = await client.comments.get();
+      resp.forEach((comment) => expect(comment).to.be.an.instanceOf(Comment));
+    } catch (error) {
+      console.error(error);
+    }
+    expect(resp).to.be.an.instanceOf(Array);
   });
 });

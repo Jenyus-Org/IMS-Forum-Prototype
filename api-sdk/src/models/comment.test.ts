@@ -27,13 +27,9 @@ describe("Comment", () => {
   });
   it("Should be able to read a comment's author.", async () => {
     const client = new Client();
-    client
-      .login({ identifier: "TestUser", password: "test123" })
-      .then(async () => {
-        client.comments.get(1).then(async (post) => {
-          await post.author?.fetch();
-          expect(post.author.username).to.be.equal("TestUser");
-        });
-      });
+    client.comments.get(1).then(async (post) => {
+      await post.author?.fetch();
+      expect(post.author.username).to.be.equal("TestUser");
+    });
   });
 });
