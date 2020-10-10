@@ -1,9 +1,7 @@
-import Client from "../client";
+import Thing from "./thing";
 import User from "./user";
 
-export default class Comment {
-  public id: number;
-  private client: Client;
+export default class Comment extends Thing {
   /* Lazily loaded attributes. */
   public body?: string;
   public parentComment?: number;
@@ -52,12 +50,6 @@ export default class Comment {
       })();
     }
     return null;
-  }
-
-  constructor({ id, client, ...data }: any) {
-    this.id = id!!;
-    this.client = client;
-    Object.assign(this, data);
   }
 
   public async comment({ body }: { body: string }) {
