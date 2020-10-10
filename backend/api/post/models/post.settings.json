@@ -14,8 +14,8 @@
       "required": true
     },
     "comments": {
-      "collection": "comment",
-      "via": "parent_post"
+      "via": "parentPost",
+      "collection": "comment"
     },
     "author": {
       "plugin": "users-permissions",

@@ -58,8 +58,8 @@
       "collection": "post"
     },
     "comments": {
-      "collection": "comment",
-      "via": "author"
+      "via": "author",
+      "collection": "comment"
     },
     "tutorials": {
       "via": "author",

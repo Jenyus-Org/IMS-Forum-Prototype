@@ -13,8 +13,8 @@
       "type": "richtext"
     },
     "comments": {
-      "collection": "comment",
-      "via": "parent_tutorial"
+      "via": "parentTutorial",
+      "collection": "comment"
     },
     "tags": {
       "collection": "tag",
