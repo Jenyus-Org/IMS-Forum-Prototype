@@ -1,13 +1,14 @@
 import Client from "../client";
-import Comment from "./comment";
 
-export default class Post {
+export default class Comment {
   public id: number;
   private client: Client;
   /* Lazily loaded attributes. */
-  public title?: string;
   public body?: string;
   public author?: any;
+  public parentComment?: number;
+  public parentTutorial?: number;
+  public parentPost?: number;
 
   /* Comments */
 
@@ -23,6 +24,18 @@ export default class Post {
     );
   }
 
+  get parent() {
+    if (this.parentPost) {
+      return this.client.posts.get(this.parentPost);
+    } else if (this.parentComment) {
+      return (async () => {
+        const data = await this.client.get("/comments" + this.parentComment);
+        return new Comment({ client: this.client, ...data });
+      })();
+    }
+    return null;
+  }
+
   constructor({ id, client, ...data }: any) {
     this.id = id!!;
     this.client = client;
@@ -33,7 +46,7 @@ export default class Post {
     const data = await this.client.post("/comments", {
       body,
       author: this.client.user.id,
-      parentPost: this.id,
+      parentComment: this.id,
     });
     const comment = new Comment({ client: this.client, ...data });
     this.comments.push(comment);
@@ -41,7 +54,7 @@ export default class Post {
   }
 
   public async fetch() {
-    const data = await this.client.get("/posts/" + this.id);
+    const data = await this.client.get("/comments/" + this.id);
     Object.assign(this, data);
   }
 }

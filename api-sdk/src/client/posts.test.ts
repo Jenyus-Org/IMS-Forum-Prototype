@@ -1,4 +1,5 @@
 import chai from "chai";
+import Post from "../models/post";
 import Client from "./client";
 
 const expect = chai.expect;
@@ -13,6 +14,7 @@ describe("Strapi client SDK.", () => {
 
         try {
           resp = await client.posts.get();
+          resp.forEach((post) => expect(post).to.be.an.instanceOf(Post));
         } catch (error) {
           console.error(error);
         }

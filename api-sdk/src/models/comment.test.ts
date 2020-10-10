@@ -4,20 +4,20 @@ import Client from "../client";
 const expect = chai.expect;
 
 describe("Strapi client SDK.", () => {
-  it("Should be able to comment under posts.", async () => {
+  it("Should be able to comment under comments.", async () => {
     const client = new Client();
     client
       .login({ identifier: "TestUser", password: "test123" })
       .then(async () => {
-        client.posts.get(1).then(async (post) => {
-          const numComments = post.comments.length;
+        client.comments.get(1).then(async (comment) => {
+          const numComments = comment.comments.length;
           let resp;
           try {
-            resp = await post.comment({
+            resp = await comment.comment({
               body: "Test comment.",
             });
             expect(resp.body).to.be.equal("Test comment.");
-            expect(post.comments.length).to.be.equal(numComments + 1);
+            expect(comment.comments.length).to.be.equal(numComments + 1);
           } catch (error) {
             console.error(error);
           }
