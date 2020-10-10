@@ -1,5 +1,6 @@
 import Client from "../client";
 import Comment from "./comment";
+import User from "./user";
 
 export default class Post {
   public id: number;
@@ -7,7 +8,24 @@ export default class Post {
   /* Lazily loaded attributes. */
   public title?: string;
   public body?: string;
-  public author?: any;
+
+  /* Author */
+
+  public _author?: User;
+
+  get author() {
+    return this._author;
+  }
+
+  set author(newAuthor: any) {
+    let na = newAuthor;
+    if (!isNaN(newAuthor)) {
+      na = new User({ id: newAuthor, client: this.client });
+    } else {
+      na = new User({ client: this.client, ...newAuthor });
+    }
+    this._author = na;
+  }
 
   /* Comments */
 
