@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorials",
+  "info": {
+    "name": "Tutorial"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "comments": {
+      "via": "parentTutorial",
+      "collection": "comment"
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "tutorial"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "tutorials"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
