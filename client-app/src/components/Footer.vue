@@ -1,6 +1,24 @@
 <template>
   <div class="footer">
-    <p>Footer</p>
+    <div>
+      <a href="/" class="link"> Privacy policy</a>
+    </div>
+    <div>
+      <a href="/" class="link">GTC</a>
+    </div>
+    <div class="jenyus">
+      <div class="left-align">
+        <a href="/" class="link">Jenyus</a>
+        <span>©Jenyus Org</span>
+        <a href="https://dan6erbond.github.io/#/" class="link" target="blank"
+          >Dan6erbond</a
+        >
+        <a href="https://doemuu.live/#/" class="link" target="blank">Doemuu</a>
+      </div>
+      <div class="right-align">
+        <div class="jenyus-img"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,6 +30,9 @@ export default {
 
 <style scoped>
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   bottom: 0;
   height: 150px;
@@ -20,6 +41,29 @@ export default {
   display: flex;
   justify-content: space-around;
   background-color: var(--secondary);
-  z-index: 999;
+}
+.link {
+  color: var(--font-colour);
+  text-decoration: underline;
+}
+.link:hover {
+  cursor: pointer;
+}
+.jenyus {
+  display: flex;
+  flex-direction: row;
+}
+.left-align {
+  text-align: start;
+  border-right:1px solid black;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+}
+.jenyus-img {
+  background-image: url("../assets/jenyus-logo.png");
+  background-size: cover;
+  height: 125px;
+  width: 125px;
 }
 </style>
