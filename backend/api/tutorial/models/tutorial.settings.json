@@ -13,17 +13,20 @@
       "type": "richtext"
     },
     "comments": {
-      "collection": "comment",
-      "via": "parent_tutorial"
+      "via": "parentTutorial",
+      "collection": "comment"
     },
     "tags": {
       "collection": "tag",
       "via": "tutorial"
     },
     "author": {
-      "via": "tutorials",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "tutorials"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

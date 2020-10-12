@@ -14,13 +14,27 @@
       "required": true
     },
     "comments": {
-      "via": "parent_post",
-      "collection": "comment"
+      "collection": "comment",
+      "via": "parentPost"
     },
     "author": {
-      "via": "posts",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "posts"
+    },
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

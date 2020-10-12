@@ -12,26 +12,26 @@
     "body": {
       "type": "richtext"
     },
-    "parent_post": {
-      "model": "post",
-      "via": "comments"
-    },
-    "parent_comment": {
+    "parentComment": {
       "model": "comment",
       "via": "comments"
     },
     "comments": {
       "collection": "comment",
-      "via": "parent_comment"
-    },
-    "parent_tutorial": {
-      "via": "comments",
-      "model": "tutorial"
+      "via": "parentComment"
     },
     "author": {
-      "via": "comments",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "comments"
+    },
+    "parentTutorial": {
+      "model": "tutorial",
+      "via": "comments"
+    },
+    "parentPost": {
+      "via": "comments",
+      "model": "post"
     }
   }
 }

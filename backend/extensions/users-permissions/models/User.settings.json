@@ -54,16 +54,16 @@
       "configurable": false
     },
     "posts": {
-      "collection": "post",
-      "via": "author"
+      "via": "author",
+      "collection": "post"
     },
     "comments": {
-      "collection": "comment",
-      "via": "author"
+      "via": "author",
+      "collection": "comment"
     },
     "tutorials": {
-      "collection": "tutorial",
-      "via": "author"
+      "via": "author",
+      "collection": "tutorial"
     }
   }
 }
