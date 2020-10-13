@@ -190,7 +190,7 @@ export default {
     width:100%;
     left:0;
     top:50%;
-    transform:translate(0,-25%);
+    transform:translate(0,-50%);
   }
   .content {
     left:0;
