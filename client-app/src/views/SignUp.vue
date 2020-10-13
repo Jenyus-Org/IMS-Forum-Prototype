@@ -7,7 +7,7 @@
           <div class="input-element">
             <b-form-input
               class="input"
-              placeholder="Enter your name"
+              placeholder="Create Username"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -28,7 +28,7 @@
             <b-form-input
               class="input"
               type="password"
-              placeholder="Enter your name"
+              placeholder="Create password"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -39,7 +39,7 @@
             <b-form-input
               class="input"
               type="password"
-              placeholder="Enter your name"
+              placeholder="Repeat your password"
             ></b-form-input>
             <span>*</span>
           </div>

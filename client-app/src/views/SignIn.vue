@@ -18,7 +18,7 @@
             <b-form-input
               class="input"
               type="password"
-              placeholder="Enter your name"
+              placeholder="Enter your password"
             ></b-form-input>
             <span>*</span>
           </div>
