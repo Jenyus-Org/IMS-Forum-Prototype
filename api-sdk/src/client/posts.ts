@@ -19,7 +19,7 @@ export default class Posts {
     const data = await this.client.post("/posts", {
       title,
       body,
-      author: this.client.user.id,
+      author: this.client.user!.id,
     });
     return new Post({ client: this.client, ...data });
   }

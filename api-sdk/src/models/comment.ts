@@ -55,7 +55,7 @@ export default class Comment extends Thing {
   public async comment({ body }: { body: string }) {
     const data = await this.client.post("/comments", {
       body,
-      author: this.client.user.id,
+      author: this.client.user!.id,
       parentComment: this.id,
     });
     const comment = new Comment({ client: this.client, ...data });

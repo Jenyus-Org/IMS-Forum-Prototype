@@ -29,7 +29,7 @@ describe("Post Helper", () => {
             body: "Test body.",
           });
           expect(resp.body).to.be.equal("Test body.");
-          expect(resp.author.id).to.be.equal(client.user.id);
+          expect(resp.author.id).to.be.equal(client.user!.id);
         } catch (error) {
           console.error(error);
         }
