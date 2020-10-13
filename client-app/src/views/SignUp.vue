@@ -13,6 +13,27 @@
           </div>
         </div>
         <div class="content-element">
+          <span class="title-content">Email:</span>
+          <div class="input-element">
+            <b-form-input
+              class="input"
+              placeholder="Enter your email"
+            ></b-form-input>
+            <span>*</span>
+          </div>
+        </div>
+        <div class="content-element">
+          <span class="title-content">Password:</span>
+          <div class="input-element">
+            <b-form-input
+              class="input"
+              type="password"
+              placeholder="Enter your name"
+            ></b-form-input>
+            <span>*</span>
+          </div>
+        </div>
+        <div class="content-element">
           <span class="title-content">Password:</span>
           <div class="input-element">
             <b-form-input
@@ -25,21 +46,13 @@
         </div>
         <div class="content-text-element">
           <div class="content-element">
-            <span>Forgot your </span>
-            <span class="link">password</span>
-            <span>?</span>
-          </div>
-          <div class="content-element">
-            <span>Do not yet have an account?</span>
-            <span class="link" @click="register()">register now</span>
+            <span>Already have an account?</span>
+            <span class="link" @click="signIn()">SignIn</span>
           </div>
         </div>
         <div class="content-element content-button-element">
           <div class="button-element">
-            <b-button class="button" @click="close()">Cancel</b-button>
-          </div>
-          <div class="button-element">
-            <b-button class="button" @click="signIn()"> SignIn</b-button>
+            <b-button class="button" @click="register()"> Register</b-button>
           </div>
         </div>
       </div>
@@ -49,18 +62,15 @@
 
 <script>
 export default {
-  name: "SignIn",
-  methods: {
-    close() {
-      this.$router.push("/");
-    },
+  name: "SignUp",
+  methods:{
     signIn(){
-      this.$router.push("/");
+      this.$router.push("/signIn");
     },
     register(){
-      this.$router.push("/register")
+      this.$router.push("/");
     }
-  },
+  }
 };
 </script>
 
@@ -89,7 +99,7 @@ export default {
 .cross-div {
   position: relative;
   top: 15px;
-  right:30px;
+  right: 30px;
   height: 30px;
   width: 32px;
   display: block;
@@ -123,8 +133,8 @@ export default {
   width: 60%;
   position: relative;
   left: 50%;
-  top:50%;
-  transform: translate(-50%,-75%);
+  top: 50%;
+  transform: translate(-50%, -75%);
   text-align: left;
 }
 .content span {
@@ -140,11 +150,11 @@ export default {
   justify-content: space-between;
   margin-right: 12px;
 }
-.content-button-element{
-  display:flex;
+.content-button-element {
+  display: flex;
 }
-.button-element{
-  flex:1;
+.button-element {
+  flex: 1;
 }
 .title-content {
   line-height: 1;
@@ -175,32 +185,32 @@ export default {
 .link:hover {
   cursor: pointer !important;
 }
-.button-element{
-  margin-right:10px;
-  margin-top:10px;
+.button-element {
+  margin-right: 10px;
+  margin-top: 10px;
 }
-.button{
-  width:100%;
-  padding:5px;
-  color:var(--font-colour);
-  background-color:var(--light-secondary);
-  border:none;
-  border-bottom:solid 1px var(--primary);
+.button {
+  width: 100%;
+  padding: 5px;
+  color: var(--font-colour);
+  background-color: var(--light-secondary);
+  border: none;
+  border-bottom: solid 1px var(--primary);
   box-shadow: 1px 2px var(--primary);
 }
 @media only screen and (max-width: 600px) {
-  .container{
-    width:100%;
-    left:0;
-    top:50%;
-    transform:translate(0,-50%);
+  .container {
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
   .content {
-    left:0;
-    top:0;
-    width:90%;
-    margin:0 auto;
-    transform:translate(0,0);
+    left: 0;
+    top: 0;
+    width: 90%;
+    margin: 0 auto;
+    transform: translate(0, 0);
   }
 }
 </style>
