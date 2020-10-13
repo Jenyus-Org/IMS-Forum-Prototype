@@ -1,12 +1,12 @@
 :root{
-  --primary: #43a047;
-  --dark-primary: #00701a;
-  --light-primary: #e8f5e9;
+  --primary: #388e3c;
+  --dark-primary: #00600f;
+  --light-primary: #6abf69;
   --secondary: #bdbdbd;
-  --light-secondary: #e9e9e9;
+  --light-secondary: #efefef;
   --dark-secondary: #8d8d8d;
   --font-colour: #424242;
-  --light-font-colour: #e0e0e0;
+  --light-font-colour: #cfcfcf;
   --dark-font-colour: #1b1b1b;
 }
 
@@ -23,3 +23,4 @@
   top:50px;
   height:100vh;
 }
+

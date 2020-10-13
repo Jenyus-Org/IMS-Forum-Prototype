@@ -1,12 +1,6 @@
 <template>
   <div class="top-level-container">
     <div class="container">
-      <div class="cross-container">
-        <div class="cross-div" @click="close()">
-          <span class="cross cross--1"></span>
-          <span class="cross cross--2"></span>
-        </div>
-      </div>
       <div class="content">
         <div class="content-element">
           <span class="title-content">Username:</span>
@@ -40,7 +34,10 @@
             <span class="link">register now</span>
           </div>
         </div>
-        <div class="content-element">
+        <div class="content-element content-button-element">
+          <div class="button-element">
+            <b-button class="button" @click="close()">Cancel</b-button>
+          </div>
           <div class="button-element">
             <b-button class="button" @click="signIn()"> SignIn</b-button>
           </div>
@@ -81,7 +78,6 @@ export default {
   transform: translate(-50%, -50%);
   height: 50vh;
   width: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .cross-container {
   display: flex;
@@ -141,6 +137,12 @@ export default {
   justify-content: space-between;
   margin-right: 12px;
 }
+.content-button-element{
+  display:flex;
+}
+.button-element{
+  flex:1;
+}
 .title-content {
   line-height: 1;
   font-weight: bold;
@@ -159,7 +161,6 @@ export default {
   padding-left: 10px;
   box-shadow: 1px 2px var(--primary);
   border: none;
-  border-radius: 5px;
   background-color: var(--light-secondary);
   border-bottom: solid 1px var(--primary);
 }
@@ -183,5 +184,20 @@ export default {
   border:none;
   border-bottom:solid 1px var(--primary);
   box-shadow: 1px 2px var(--primary);
+}
+@media only screen and (max-width: 600px) {
+  .container{
+    width:100%;
+    left:0;
+    top:50%;
+    transform:translate(0,-25%);
+  }
+  .content {
+    left:0;
+    top:0;
+    width:90%;
+    margin:0 auto;
+    transform:translate(0,0);
+  }
 }
 </style>

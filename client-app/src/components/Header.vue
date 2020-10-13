@@ -49,15 +49,22 @@ export default {
   justify-content: space-between;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: var(--dark-primary);
+  background-color: var(--primary);
   height: 50px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .text {
   align-self: center;
 }
 .text a {
+  padding:10px;
+  padding-bottom:5px;
   color: var(--light-font-colour);
+}
+.text a:hover{
+  text-decoration: none;
+  border-radius:5px;
+  border-bottom: solid 1px var(--dark-secondary);
 }
 .header-content {
   flex: 1;

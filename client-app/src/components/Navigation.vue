@@ -65,8 +65,8 @@ export default {
   background-color: var(--secondary);
 }
 .active {
-  color: var(--dark-primary);
-  border-left: solid 5px var(--dark-primary);
+  color: var(--primary);
+  border-left: solid 5px var(--primary);
 }
 .align-top {
   width: 100%;
@@ -81,7 +81,7 @@ export default {
 }
 .nav-link-settings{
   width: 100%;
-  color: var(--dark-font-colour);
+  color: var(--font-colour);
   border-left: solid 5px transparent;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

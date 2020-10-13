@@ -37,17 +37,17 @@ export default {
   bottom: 0;
   height: 150px;
   width: 100%;
-  border-top: solid 1px black;
   display: flex;
   justify-content: space-around;
-  background-color: var(--secondary);
+  background-color: var(--light-secondary);
+  box-shadow: 0px -1px 3px #888;
 }
 .link {
   color: var(--font-colour);
-  text-decoration: underline;
 }
 .link:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 .jenyus {
   display: flex;
@@ -65,5 +65,11 @@ export default {
   background-size: cover;
   height: 125px;
   width: 125px;
+}
+
+@media only screen and (max-width: 600px) {
+  .left-align{
+    display:none;
+  }
 }
 </style>
