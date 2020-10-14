@@ -92,41 +92,6 @@ export default {
   height: 50vh;
   width: 50%;
 }
-.cross-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.cross-div {
-  position: relative;
-  top: 15px;
-  right: 30px;
-  height: 30px;
-  width: 32px;
-  display: block;
-  z-index: 1;
-  border: 0;
-  border-radius: 0;
-}
-.cross {
-  background-color: #130f40;
-  position: absolute;
-  top: 15px;
-  right: 6px;
-  left: 6px;
-  height: 2px;
-  width: auto;
-  margin-top: -1px;
-}
-.cross-div:hover {
-  cursor: pointer;
-}
-.cross--1 {
-  transform: translateY(-6px);
-  transform: rotate(45deg);
-}
-.cross--2 {
-  transform: rotate(-45deg);
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -172,13 +137,14 @@ export default {
 }
 .input {
   padding-left: 10px;
-  box-shadow: 1px 2px var(--primary);
+  box-shadow: 0px 2px var(--dark-primary);
   border: none;
-  background-color: var(--light-secondary);
-  border-bottom: solid 1px var(--primary);
+  background-color: var(--light-primary);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .link {
-  color: var(--primary) !important;
+  color: var(--dark-primary) !important;
   font-weight: 550;
   text-decoration: underline;
 }
@@ -193,10 +159,11 @@ export default {
   width: 100%;
   padding: 5px;
   color: var(--font-colour);
-  background-color: var(--light-secondary);
+  background-color: var(--light-primary);
   border: none;
-  border-bottom: solid 1px var(--primary);
-  box-shadow: 1px 2px var(--primary);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: 0px 2px var(--dark-primary);
 }
 @media only screen and (max-width: 600px) {
   .container {

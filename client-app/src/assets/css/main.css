@@ -1,18 +1,15 @@
 :root{
-  --primary: #388e3c;
-  --dark-primary: #00600f;
-  --light-primary: #6abf69;
+  --primary: #bbe6d6;
+  --dark-primary: #42b983;
+  --light-primary: #e4f5ef;
   --secondary: #bdbdbd;
   --light-secondary: #efefef;
   --dark-secondary: #8d8d8d;
-  --font-colour: #424242;
+  --font-colour: #2c3e50;
   --light-font-colour: #cfcfcf;
   --dark-font-colour: #1b1b1b;
 }
 
-*{
-  color: var(--font-colour);
-}
 .activenavbar{
   width: calc(100% - 200px) !important;
   position: relative;

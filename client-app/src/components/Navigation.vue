@@ -3,19 +3,27 @@
     <Sidebar>
       <div class="sidenav-links">
         <div class="align-top">
-          <router-link class="nav-link" exact-active-class="active" to="/"
-            >Home</router-link
-          >
-          <router-link class="nav-link" exact-active-class="active" to="about"
-            >About</router-link
-          >
+          <router-link class="nav-link" exact-active-class="active" to="/">
+            <div class="navlink-container">
+              <FontAwesomeIcon class="icon fa-sm" icon="home" />
+              <span class="link-title">Home</span>
+            </div>
+          </router-link>
+          <router-link class="nav-link" exact-active-class="active" to="about">
+            <div class="navlink-container">
+              <FontAwesomeIcon class="icon fa-sm" icon="home" />
+              <span class="link-title">About</span>
+            </div>
+          </router-link>
         </div>
         <div class="align-bottom">
           <div class="settings">
-            <FontAwesomeIcon class="icon fa-lg" icon="cogs" />
-            <router-link class="nav-link-settings" to="settings"
-              >Settings</router-link
-            >
+            <router-link class="nav-link-settings" to="settings">
+              <div class="navlink-container">
+                <FontAwesomeIcon class="icon fa-lg cogs" icon="cogs" />
+                <span class="link-title">Settings</span>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -32,11 +40,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    toggle() {
-      this.$store.dispatch("changeNavVisibility", !this.$store.state.activeNav);
-    },
-  },
+  methods: {},
   components: {
     Sidebar,
     FontAwesomeIcon,
@@ -48,49 +52,53 @@ export default {
 @import "../assets/css/nav.css";
 
 .sidenav-links {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 50px);
   text-align: start;
+  color: var(--font-colour) !important;
+}
+a {
+  color: var(--font-colour);
+}
+a:hover{
+  text-decoration: none;
+}
+.navlink-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
 }
 .nav-link {
-  width: 100%;
-  color: var(--dark-font-colour);
-  border-left: solid 5px transparent;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding-left: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 0 !important;
 }
-.nav-link:hover {
-  background-color: var(--secondary);
+.link-title {
+  flex: 1;
+}
+.navlink-container:hover {
+  background-color: var(--light-primary);
 }
 .active {
-  color: var(--primary);
-  border-left: solid 5px var(--primary);
+  color: var(--dark-primary);
 }
 .align-top {
   width: 100%;
 }
 .align-bottom {
-  width: 90%;
-  position: absolute;
   bottom: 10px;
 }
-.settings {
-  display: flex;
-}
-.nav-link-settings{
-  width: 100%;
-  color: var(--font-colour);
-  border-left: solid 5px transparent;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.settings:hover {
+  background-color: var(--light-primary);
 }
 .icon {
-  position: relative;
-  top: 12px;
+  flex: 0.3;
+  align-self: center;
+  margin-left: 10px;
+  height: 1.33em;
+}
+.cogs {
+  height: 1em;
 }
 </style>

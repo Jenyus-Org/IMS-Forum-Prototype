@@ -54,12 +54,12 @@ export default {
     close() {
       this.$router.push("/");
     },
-    signIn(){
+    signIn() {
       this.$router.push("/");
     },
-    register(){
-      this.$router.push("/register")
-    }
+    register() {
+      this.$router.push("/register");
+    },
   },
 };
 </script>
@@ -89,7 +89,7 @@ export default {
 .cross-div {
   position: relative;
   top: 15px;
-  right:30px;
+  right: 30px;
   height: 30px;
   width: 32px;
   display: block;
@@ -97,34 +97,14 @@ export default {
   border: 0;
   border-radius: 0;
 }
-.cross {
-  background-color: #130f40;
-  position: absolute;
-  top: 15px;
-  right: 6px;
-  left: 6px;
-  height: 2px;
-  width: auto;
-  margin-top: -1px;
-}
-.cross-div:hover {
-  cursor: pointer;
-}
-.cross--1 {
-  transform: translateY(-6px);
-  transform: rotate(45deg);
-}
-.cross--2 {
-  transform: rotate(-45deg);
-}
 .content {
   display: flex;
   flex-direction: column;
   width: 60%;
   position: relative;
   left: 50%;
-  top:50%;
-  transform: translate(-50%,-75%);
+  top: 50%;
+  transform: translate(-50%, -75%);
   text-align: left;
 }
 .content span {
@@ -140,11 +120,11 @@ export default {
   justify-content: space-between;
   margin-right: 12px;
 }
-.content-button-element{
-  display:flex;
+.content-button-element {
+  display: flex;
 }
-.button-element{
-  flex:1;
+.button-element {
+  flex: 1;
 }
 .title-content {
   line-height: 1;
@@ -162,45 +142,47 @@ export default {
 }
 .input {
   padding-left: 10px;
-  box-shadow: 1px 2px var(--primary);
+  box-shadow: 0px 2px var(--dark-primary);
   border: none;
-  background-color: var(--light-secondary);
-  border-bottom: solid 1px var(--primary);
+  background-color: var(--light-primary);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .link {
-  color: var(--primary) !important;
+  color: var(--dark-primary) !important;
   font-weight: 550;
   text-decoration: underline;
 }
 .link:hover {
   cursor: pointer !important;
 }
-.button-element{
-  margin-right:10px;
-  margin-top:10px;
+.button-element {
+  margin-right: 10px;
+  margin-top: 10px;
 }
-.button{
-  width:100%;
-  padding:5px;
-  color:var(--font-colour);
-  background-color:var(--light-secondary);
-  border:none;
-  border-bottom:solid 1px var(--primary);
-  box-shadow: 1px 2px var(--primary);
+.button {
+  width: 100%;
+  padding: 5px;
+  color: var(--font-colour);
+  background-color: var(--light-primary);
+  border: none;
+  box-shadow: 0px 2px var(--dark-primary);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 @media only screen and (max-width: 600px) {
-  .container{
-    width:100%;
-    left:0;
-    top:50%;
-    transform:translate(0,-50%);
+  .container {
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
   .content {
-    left:0;
-    top:0;
-    width:90%;
-    margin:0 auto;
-    transform:translate(0,0);
+    left: 0;
+    top: 0;
+    width: 90%;
+    margin: 0 auto;
+    transform: translate(0, 0);
   }
 }
 </style>

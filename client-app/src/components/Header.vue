@@ -1,19 +1,7 @@
 <template>
   <div class="header">
     <div class="header-content">
-      <div
-        id="burger"
-        :class="{ active: this.$store.state.activeNav }"
-        @click.prevent="toggle"
-      >
-        <slot>
-          <button type="button" class="burger-button" title="Menu">
-            <span class="burger-bar burger-bar--1"></span>
-            <span class="burger-bar burger-bar--2"></span>
-            <span class="burger-bar burger-bar--3"></span>
-          </button>
-        </slot>
-      </div>
+
     </div>
     <div v-if="loggedIn" class="header-content text">
       <p>Header logged In</p>
@@ -33,25 +21,21 @@ export default {
     };
   },
   methods: {
-    toggle() {
-      this.$store.dispatch("changeNavVisibility", !this.$store.state.activeNav);
-    },
   },
 };
 </script>
 
 <style scoped>
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  z-index: 999;
   display: flex;
   justify-content: space-between;
   padding-right: 10px;
   padding-left: 10px;
   background-color: var(--primary);
   height: 50px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px var(--light-primary), 0 1px 2px var(--light-primary);
 }
 .text {
   align-self: center;
@@ -59,12 +43,11 @@ export default {
 .text a {
   padding:10px;
   padding-bottom:5px;
-  color: var(--light-font-colour);
+  color: var(--font-colour);
 }
 .text a:hover{
-  text-decoration: none;
-  border-radius:5px;
-  border-bottom: solid 1px var(--dark-secondary);
+  cursor:pointer;
+  text-decoration:none;
 }
 .header-content {
   flex: 1;

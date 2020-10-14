@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Header />
     <Navigation />
+    <Header />
     <div class="home">
-      <div @click="toggleNav()" class="view" :class="{ activenavbar: this.$store.state.activeNav }">
+      <div class="view activenavbar">
         <router-view />
       </div>
     </div>
@@ -23,9 +23,6 @@ export default {
     Footer,
   },
   methods: {
-    toggleNav() {
-      this.$store.dispatch("changeNavVisibility", false);
-    },
   },
 };
 </script>
