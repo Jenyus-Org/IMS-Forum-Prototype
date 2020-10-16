@@ -151,6 +151,13 @@ export default {
   outline: none !important;
   box-shadow: none;
 }
+.input::placeholder {
+  transition: all 200ms;
+  vertical-align: top;
+}
+.input:focus::placeholder {
+  font-size: 0.85em;
+}
 .link {
   color: var(--dark-primary) !important;
   font-weight: 550;
