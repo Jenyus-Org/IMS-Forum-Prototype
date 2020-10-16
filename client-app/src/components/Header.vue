@@ -7,7 +7,7 @@
       <p>Header logged In</p>
     </div>
     <div v-else class="header-content text">
-      <a href="/signIn">SignIn</a>
+      <a href="/signIn">Sign In</a>
     </div>
   </div>
 </template>

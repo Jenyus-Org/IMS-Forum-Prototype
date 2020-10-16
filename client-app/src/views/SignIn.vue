@@ -2,36 +2,34 @@
   <div class="top-level-container">
     <div class="container">
       <div class="content">
-        <div class="content-element">
-          <span class="title-content">Username:</span>
+        <div class="content-element mb-2">
+          <span class="title-content">Username</span>
           <div class="input-element">
             <b-form-input
-              class="input"
+              class="input mt-2"
               placeholder="Enter your name"
             ></b-form-input>
-            <span>*</span>
+            <span class="mt-2">*</span>
           </div>
         </div>
-        <div class="content-element">
-          <span class="title-content">Password:</span>
+        <div class="content-element mb-2">
+          <span class="title-content">Password</span>
           <div class="input-element">
             <b-form-input
-              class="input"
+              class="input mt-2"
               type="password"
               placeholder="Enter your password"
             ></b-form-input>
-            <span>*</span>
+            <span class="mt-2">*</span>
           </div>
         </div>
-        <div class="content-text-element">
+        <div class="content-text-element mb-1">
           <div class="content-element">
-            <span>Forgot your </span>
-            <span class="link">password</span>
-            <span>?</span>
+            <span>Forgot your <span class="link">password</span>?</span>
           </div>
           <div class="content-element">
-            <span>Do not yet have an account?</span>
-            <span class="link" @click="register()">register now</span>
+            <span>Do not have an account yet?</span>
+            <span class="link" @click="register()">Register now.</span>
           </div>
         </div>
         <div class="content-element content-button-element">
@@ -39,7 +37,7 @@
             <b-button class="button" @click="close()">Cancel</b-button>
           </div>
           <div class="button-element">
-            <b-button class="button" @click="signIn()"> SignIn</b-button>
+            <b-button class="button" @click="signIn()">Sign In</b-button>
           </div>
         </div>
       </div>
@@ -129,7 +127,7 @@ export default {
 .title-content {
   line-height: 1;
   font-weight: bold;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .input-element {
   display: flex;
@@ -142,11 +140,16 @@ export default {
 }
 .input {
   padding-left: 10px;
-  box-shadow: 0px 2px var(--dark-primary);
+  /* box-shadow: 0px 2px var(--dark-primary); */
   border: none;
-  background-color: var(--light-primary);
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  /* background-color: var(--light-primary); */
+  border-radius: 0px;
+  border-bottom: 1px solid var(--dark-primary);
+}
+.input:focus {
+  border-bottom-width: 2px;
+  outline: none !important;
+  box-shadow: none;
 }
 .link {
   color: var(--dark-primary) !important;
@@ -163,12 +166,14 @@ export default {
 .button {
   width: 100%;
   padding: 5px;
-  color: var(--font-colour);
-  background-color: var(--light-primary);
+  color: white;
+  background-color: var(--dark-primary);
   border: none;
-  box-shadow: 0px 2px var(--dark-primary);
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+}
+.button:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 @media only screen and (max-width: 600px) {
   .container {
