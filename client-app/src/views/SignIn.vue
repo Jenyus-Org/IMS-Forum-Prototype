@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 * {
   margin: 0;
   padding: 0;
@@ -104,14 +104,14 @@ export default {
   top: 50%;
   transform: translate(-50%, -75%);
   text-align: left;
-}
-.content span {
-  padding-left: 2px;
-  color: var(--font-colour);
-  font-size: 14px;
-}
-.content span:hover {
-  cursor: default;
+  span {
+    padding-left: 2px;
+    color: var(--font-colour);
+    font-size: 14px;
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 .content-text-element {
   display: flex;
@@ -132,11 +132,11 @@ export default {
 .input-element {
   display: flex;
   margin-bottom: 10px;
-}
-.input-element span {
-  color: var(--danger);
-  padding-left: 5px;
-  font-size: 20px;
+  span {
+    color: var(--danger);
+    padding-left: 5px;
+    font-size: 20px;
+  }
 }
 .input {
   padding-left: 10px;
@@ -145,26 +145,25 @@ export default {
   /* background-color: var(--light-primary); */
   border-radius: 0px;
   border-bottom: 1px solid var(--dark-primary);
-}
-.input:focus {
-  border-bottom-width: 2px;
-  outline: none !important;
-  box-shadow: none;
-}
-.input::placeholder {
-  transition: all 200ms;
-  vertical-align: top;
-}
-.input:focus::placeholder {
-  font-size: 0.85em;
+  &::placeholder {
+    transition: all 200ms;
+  }
+  &:focus {
+    border-bottom-width: 2px;
+    outline: none !important;
+    box-shadow: none;
+    &::placeholder {
+      font-size: 0.85em;
+    }
+  }
 }
 .link {
   color: var(--dark-primary) !important;
   font-weight: 550;
   text-decoration: underline;
-}
-.link:hover {
-  cursor: pointer !important;
+  &:hover {
+    cursor: pointer !important;
+  }
 }
 .button-element {
   margin-right: 10px;
@@ -178,9 +177,9 @@ export default {
   border: none;
   border-radius: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
-}
-.button:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  &:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
 }
 @media only screen and (max-width: 600px) {
   .container {
