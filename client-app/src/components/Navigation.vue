@@ -9,10 +9,10 @@
               <span class="link-title">Home</span>
             </div>
           </router-link>
-          <router-link class="nav-link" exact-active-class="active" to="about">
+          <router-link class="nav-link" exact-active-class="active" to="tutorial">
             <div class="navlink-container">
-              <FontAwesomeIcon class="icon fa-sm" icon="home" />
-              <span class="link-title">About</span>
+              <FontAwesomeIcon class="icon fa-sm" icon="chalkboard" />
+              <span class="link-title">Tutorial</span>
             </div>
           </router-link>
         </div>
