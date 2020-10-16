@@ -63,6 +63,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/css/form.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -79,121 +81,5 @@ export default {
   transform: translate(-50%, -50%);
   height: 50vh;
   width: 50%;
-}
-.cross-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.cross-div {
-  position: relative;
-  top: 15px;
-  right: 30px;
-  height: 30px;
-  width: 32px;
-  display: block;
-  z-index: 1;
-  border: 0;
-  border-radius: 0;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -75%);
-  text-align: left;
-  span {
-    padding-left: 2px;
-    color: var(--font-colour);
-    font-size: 14px;
-    &:hover {
-      cursor: default;
-    }
-  }
-}
-.content-text-element {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 12px;
-}
-.content-button-element {
-  display: flex;
-}
-.button-element {
-  flex: 1;
-}
-.title-content {
-  line-height: 1;
-  font-weight: bold;
-  /* text-decoration: underline; */
-}
-.input-element {
-  display: flex;
-  margin-bottom: 10px;
-  span {
-    color: var(--danger);
-    padding-left: 5px;
-    font-size: 20px;
-  }
-}
-.input {
-  padding-left: 10px;
-  /* box-shadow: 0px 2px var(--dark-primary); */
-  border: none;
-  /* background-color: var(--light-primary); */
-  border-radius: 0px;
-  border-bottom: 1px solid var(--dark-primary);
-  &::placeholder {
-    transition: all 200ms;
-  }
-  &:focus {
-    border-bottom-width: 2px;
-    outline: none !important;
-    box-shadow: none;
-    &::placeholder {
-      font-size: 0.85em;
-    }
-  }
-}
-.link {
-  color: var(--dark-primary) !important;
-  font-weight: 550;
-  text-decoration: underline;
-  &:hover {
-    cursor: pointer !important;
-  }
-}
-.button-element {
-  margin-right: 10px;
-  margin-top: 10px;
-}
-.button {
-  width: 100%;
-  padding: 5px;
-  color: white;
-  background-color: var(--dark-primary);
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
-  &:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
-}
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 100%;
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  .content {
-    left: 0;
-    top: 0;
-    width: 90%;
-    margin: 0 auto;
-    transform: translate(0, 0);
-  }
 }
 </style>
