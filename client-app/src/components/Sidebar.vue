@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "../assets/css/nav.css";
 
 .sidebar-panel {
@@ -38,7 +38,7 @@ export default {
   border-bottom-right-radius: 2px;
   z-index: 1;
   padding: 1rem 10px 2rem 10px;
-  box-shadow: 0 1px 3px  var(--light-primary), 0 1px 3px var(--light-primary),0 1px 3px  var(--light-primary), 0 1px 3px  var(--light-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   width: 200px;
   min-width: 150px;
   padding:0;
