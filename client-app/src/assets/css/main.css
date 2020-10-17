@@ -1,0 +1,23 @@
+:root{
+  --primary: #bbe6d6;
+  --dark-primary: #42b983;
+  --light-primary: #e4f5ef;
+  --secondary: #bdbdbd;
+  --light-secondary: #efefef;
+  --dark-secondary: #8d8d8d;
+  --font-colour: #2c3e50;
+  --light-font-colour: #cfcfcf;
+  --dark-font-colour: #1b1b1b;
+}
+
+.activenavbar{
+  width: calc(100% - 200px) !important;
+  position: relative;
+  left:200px;
+}
+.home{
+  position: relative;
+  top:50px;
+  height:100vh;
+}
+
