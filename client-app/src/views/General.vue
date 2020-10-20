@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Navigation />
-    <Header />
     <div class="home">
+      <Navigation />
+      <Header />
       <div class="view activenavbar">
         <router-view />
       </div>
@@ -22,14 +22,8 @@ export default {
     Navigation,
     Footer,
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
 <style scoped>
-.view {
-  padding-top:10px;
-  height:100vh;
-  width:100%;
-}
 </style>

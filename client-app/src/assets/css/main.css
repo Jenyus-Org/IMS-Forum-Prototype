@@ -11,13 +11,13 @@
 }
 
 .activenavbar{
-  width: calc(100% - 200px) !important;
+  width: calc(100vw - 200px) !important;
   position: relative;
   left:200px;
+  padding-top:60px;
 }
 .home{
   position: relative;
-  top:50px;
-  height:100vh;
+  height:100%;
 }
 

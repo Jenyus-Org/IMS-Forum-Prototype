@@ -35,13 +35,11 @@ export default {
   justify-content: space-between;
   position: relative;
   bottom: 0;
-  height: 150px;
+  padding:10px;
   width: 100%;
-  display: flex;
   z-index: 999;
   justify-content: space-around;
   background-color: var(--light-secondary);
-  box-shadow: 0px -1px 3px var(--primary);
 }
 .link {
   color: var(--font-colour);
