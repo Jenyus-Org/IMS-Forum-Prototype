@@ -10,14 +10,6 @@
   --dark-font-colour: #1b1b1b;
 }
 
-.activenavbar{
-  width: calc(100vw - 200px) !important;
-  position: relative;
-  left:200px;
-  padding-top:60px;
+html, body, #app, .app {
+  min-height: 100vh;
 }
-.home{
-  position: relative;
-  height:100%;
-}
-

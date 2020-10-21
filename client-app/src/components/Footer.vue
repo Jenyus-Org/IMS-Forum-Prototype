@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div>
       <a href="/" class="link"> Privacy policy</a>
     </div>
@@ -10,16 +10,16 @@
       <div class="left-align">
         <a href="/" class="link">Jenyus</a>
         <span>©Jenyus Org</span>
-        <a href="https://dan6erbond.github.io/#/" class="link" target="blank"
-          >Dan6erbond</a
-        >
+        <a href="https://dan6erbond.github.io/#/" class="link" target="blank">
+          Dan6erbond
+        </a>
         <a href="https://doemuu.live/#/" class="link" target="blank">Doemuu</a>
       </div>
       <div class="right-align">
         <div class="jenyus-img"></div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -33,11 +33,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  bottom: 0;
-  padding:10px;
+  padding: 10px;
   width: 100%;
-  z-index: 999;
   justify-content: space-around;
   background-color: var(--light-secondary);
 }
@@ -54,8 +51,8 @@ export default {
 }
 .left-align {
   text-align: start;
-  border-right:1px solid black;
-  padding:10px;
+  border-right: 1px solid black;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -67,8 +64,8 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  .left-align{
-    display:none;
+  .left-align {
+    display: none;
   }
 }
 </style>

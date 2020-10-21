@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div class="home">
-      <Navigation />
-      <Header />
-      <div class="view activenavbar">
+  <div class="app">
+    <Header />
+    <Navigation />
+    <b-container fluid>
+      <main role="main">
         <router-view />
-      </div>
-    </div>
-    <Footer />
+      </main>
+      <Footer />
+    </b-container>
   </div>
 </template>
 
@@ -25,5 +25,24 @@ export default {
   methods: {},
 };
 </script>
+
 <style scoped>
+.view {
+  height: 100%;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  min-height: 100vh;
+  justify-items: stretch;
+  padding: 50px 0 0 200px;
+}
+
+main {
+  height: 100%;
+  flex: 1;
+  padding: 20px;
+}
 </style>
