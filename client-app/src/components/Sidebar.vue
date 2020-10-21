@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <div class="sidebar">
-        <div class="sidebar-panel">
-          <div class="nav-header">
-            <span>Imorum</span>
-          </div>
-          <slot></slot>
-        </div>
+  <b-sidebar
+    width="200px"
+    visible
+    no-slide
+    no-header-close
+    no-close-on-esc
+    no-close-on-backdrop
+    no-close-on-route-change
+    no-header
+  >
+    <div class="px-3 py-2">
+      <div class="nav-header"><span>Imorum</span></div>
+      <slot></slot>
     </div>
-  </div>
+  </b-sidebar>
 </template>
 
 <script>
@@ -25,35 +30,34 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../assets/css/nav.css";
-
-.sidebar-panel {
+<style lang="scss">
+.b-sidebar > .b-sidebar-body {
   overflow-y: auto;
   background-color: #f5f5f5;
-  position: absolute;
-  left: 0;
-  height:100%;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  z-index: 1;
   padding: 1rem 10px 2rem 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   width: 200px;
   min-width: 150px;
-  padding:0;
+  padding: 0;
 }
-.nav-header{
-  height:50px;
+</style>
+
+<style lang="scss" scoped>
+@import "../assets/css/nav.css";
+
+.nav-header {
+  height: 50px;
   align-items: center;
-  display:flex;
+  display: flex;
   align-items: center;
 }
-.nav-header span{
-  flex:1;
-  font-weight:bold;
+.nav-header span {
+  flex: 1;
+  font-weight: bold;
 }
-.nav-header span:hover{
-  cursor:default;
+.nav-header span:hover {
+  cursor: default;
 }
 </style>

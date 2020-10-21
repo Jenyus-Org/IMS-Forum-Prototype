@@ -1,34 +1,32 @@
 <template>
-  <div>
-    <Sidebar>
-      <div class="sidenav-links">
-        <div class="align-top">
-          <router-link class="nav-link" exact-active-class="active" to="/">
-            <div class="navlink-container">
-              <FontAwesomeIcon class="icon fa-sm" icon="home" />
-              <span class="link-title">Home</span>
-            </div>
-          </router-link>
-          <router-link class="nav-link" exact-active-class="active" to="about">
-            <div class="navlink-container">
-              <FontAwesomeIcon class="icon fa-sm" icon="home" />
-              <span class="link-title">About</span>
-            </div>
-          </router-link>
-        </div>
-        <div class="align-bottom">
-          <div class="settings">
-            <router-link class="nav-link-settings" to="settings">
-              <div class="navlink-container">
-                <FontAwesomeIcon class="icon fa-lg cogs" icon="cogs" />
-                <span class="link-title">Settings</span>
-              </div>
-            </router-link>
+  <Sidebar>
+    <div class="sidenav-links">
+      <div class="align-top">
+        <router-link class="nav-link" exact-active-class="active" to="/">
+          <div class="navlink-container">
+            <FontAwesomeIcon class="icon fa-sm" icon="home" />
+            <span class="link-title">Home</span>
           </div>
+        </router-link>
+        <router-link class="nav-link" exact-active-class="active" to="tutorial">
+          <div class="navlink-container">
+            <FontAwesomeIcon class="icon fa-sm" icon="chalkboard" />
+            <span class="link-title">Tutorial</span>
+          </div>
+        </router-link>
+      </div>
+      <div class="align-bottom">
+        <div class="settings">
+          <router-link class="nav-link-settings" to="settings">
+            <div class="navlink-container">
+              <FontAwesomeIcon class="icon fa-lg cogs" icon="cogs" />
+              <span class="link-title">Settings</span>
+            </div>
+          </router-link>
         </div>
       </div>
-    </Sidebar>
-  </div>
+    </div>
+  </Sidebar>
 </template>
 
 <script>
@@ -62,7 +60,7 @@ export default {
 a {
   color: var(--font-colour);
 }
-a:hover{
+a:hover {
   text-decoration: none;
 }
 .navlink-container {
