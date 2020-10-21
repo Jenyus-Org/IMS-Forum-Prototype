@@ -173,6 +173,6 @@ export default {
 }
 .card {
   margin: 10px;
-  width: 500px;
+  max-width:500px;
 }
 </style>
