@@ -35,7 +35,7 @@
         <img :src="tutorial.imgsrc" alt="framework" />
       </div>
       <div class="continue-btn">
-        <a href="" class="btn">Learn more</a>
+        <router-link class="btn" :to="tutoriallink">Learn more</router-link>
       </div>
     </div>
   </div>
@@ -52,6 +52,12 @@ export default {
       console.log("Determine");
     },
   },
+  computed:{
+    tutoriallink: function(){
+      let retVal = `/tutorial/${this.tutorial.id}`;
+      return retVal;
+    }
+  }
 };
 </script>
 

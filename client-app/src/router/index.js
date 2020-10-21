@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import General from "../views/General";
-import Tutorial from "../views/Tutorials";
+import Tutorials from "../views/Tutorials";
+import Tutorial from "../views/Tutorial";
 import Settings from "../views/Settings";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
@@ -23,8 +24,13 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/About.vue"),
       },
       {
-        path: "/tutorial",
+        path: "/tutorials",
         name: "tutorial",
+        component: Tutorials
+      },
+      {
+        path: "/tutorial/:id",
+        name:"tutorial",
         component: Tutorial
       },
       {
