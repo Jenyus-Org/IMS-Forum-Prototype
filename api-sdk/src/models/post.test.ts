@@ -5,7 +5,14 @@ const expect = chai.expect;
 
 describe("Post", () => {
   it("Should be able to comment under posts.", async () => {
+  it("Should be able to read a post's raw body and markdown to HTML output.", async () => {
     const client = new Client();
+    client.posts.get(1).then(async (post) => {
+      post.bodyHTML;
+    });
+  });
+
+  it("Should be able to comment under posts.", async () => {
     client
       .login({ identifier: "TestUser", password: "test123" })
       .then(async () => {
