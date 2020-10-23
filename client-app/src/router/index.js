@@ -26,11 +26,11 @@ const routes = [
       },
       {
         path: "/tutorials",
-        name: "tutorial",
+        name: "tutorials",
         component: Tutorials
       },
       {
-        path: "/tutorial/:id",
+        path: "/tutorials/:id",
         name:"tutorial",
         component: Tutorial
       },

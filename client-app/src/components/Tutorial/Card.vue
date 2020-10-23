@@ -54,7 +54,7 @@ export default {
   },
   computed:{
     tutoriallink: function(){
-      let retVal = `/tutorial/${this.tutorial.id}`;
+      let retVal = `/tutorials/${this.tutorial.id}`;
       return retVal;
     }
   }
