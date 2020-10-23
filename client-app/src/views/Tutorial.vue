@@ -1,28 +1,26 @@
 <template>
   <div class="tutorial-overview">
     <div class="tutorial-details">
-      <div class="like">
+      <div class="like ml-2">
         <FontAwesomeIcon class="icon fa-lg heart-icon" icon="heart" />
         <span>117</span>
       </div>
       <div class="author">
-        <div
-          v-for="tag in activetutorial.author.tags"
-          :key="tag.id"
-          class="tags"
-        >
-          <span class="tag" :style="{ background: tag.colour }">{{
-            tag.name
-          }}</span>
+        <div class="tags">
+          <b-badge
+            class="mr-2"
+            :style="{ background: tag.colour }"
+            v-for="tag in activetutorial.author.tags"
+            :key="tag.id"
+            >{{ tag.name }}</b-badge
+          >
         </div>
         <span>{{ activetutorial.author.name }}</span>
-        <span class="profilepicture"
-          ><img :src="activetutorial.author.profilepicture"
-        /></span>
+        <b-avatar class="mx-2"></b-avatar>
       </div>
     </div>
-    <div class="tutorial-body">
-      <div class="tutorial-tags">
+    <div class="tutorial-body p-4">
+      <div class="tutorial-tags mb-4">
         <img :src="activetutorial.complexity" alt="complexity" />
         <img :src="activetutorial.type" alt="type" />
         <img :src="activetutorial.language" alt="language" />
@@ -45,10 +43,14 @@ export default {
       let fetchedTutorial = {
         id: "1",
         name: "Hello World",
-        complexity:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
-        type: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
-        language: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
-        framework: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+        complexity:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+        type:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+        language:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+        framework:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
         author: {
           id: 1,
           name: "Developer 1",
@@ -78,26 +80,33 @@ export default {
   .tutorial-details {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25), 0 0px 2px rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(0,0,0,.125);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
+
   span {
     padding: 10px;
   }
+
   .like {
     text-align: left;
     flex: 1;
   }
+
   .author {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+
     .tags {
-      vertical-align: center;
+      display: flex;
+      align-items: center;
+
       .tag {
         position: relative;
         top: 25%;
@@ -106,33 +115,40 @@ export default {
         border-radius: 2px;
       }
     }
+
     .profilepicture {
+      height: 30px;
+
       img {
         height: inherit !important;
       }
-      height: 30px;
     }
-    .profilepicture:hover{
-      cursor:pointer;
+
+    .profilepicture:hover {
+      cursor: pointer;
     }
   }
+
   .tutorial-body {
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25), 0 0px 2px rgba(0, 0, 0, 0.22);
-    padding:5px;
-    .tutorial-tags{
-      display:flex;
-      img{
-        height:80px;
-        padding:10px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 5px;
+    text-align: left;
+
+    .tutorial-tags {
+      display: flex;
+
+      img {
+        height: 60px;
       }
     }
   }
 }
 .heart-icon {
   margin-top: 5px;
-}
-.heart-icon:hover {
-  color: var(--dark-primary);
-  cursor: pointer;
+
+  &:hover {
+    color: var(--dark-primary);
+    cursor: pointer;
+  }
 }
 </style>
