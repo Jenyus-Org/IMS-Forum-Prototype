@@ -1,7 +1,8 @@
 import Comment from "./comment";
+import Toc from "./mixins/tocMixin";
 import Submission from "./submission";
 
-export default class Post extends Submission {
+class _Post extends Submission {
   public title?: string;
 
   public async comment({ body }: { body: string }) {
@@ -21,3 +22,7 @@ export default class Post extends Submission {
     return this;
   }
 }
+
+const Post = Toc(_Post);
+
+export default Post;
