@@ -12,7 +12,7 @@
             >
           </div>
           <div class="create-btn-container">
-            <a href="" class="btn">Create Tutorial</a>
+            <router-link class="btn" to="create-tutorial">Create Tutorial</router-link>
           </div>
         </div>
         <div class="description-block">
