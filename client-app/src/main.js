@@ -8,11 +8,15 @@ import router from './router'
 import store from './store'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUserSecret, faCogs, faHome} from "@fortawesome/free-solid-svg-icons";
+import { faUserSecret, faCogs, faHome, faChalkboard, faSearch, faHeart} from "@fortawesome/free-solid-svg-icons";
 
 library.add(faUserSecret)
 library.add(faCogs)
 library.add(faHome)
+library.add(faChalkboard)
+library.add(faSearch)
+library.add(faHeart)
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -33,6 +33,7 @@ export default {
   background-color: var(--dark-primary);
   height: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
+  top: 0;
 }
 .text {
   align-self: center;
