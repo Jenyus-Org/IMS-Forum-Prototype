@@ -1,6 +1,5 @@
 import { MarkdownToc } from "../../helpers/markdown";
 
-type Constructor = new (...args: any[]) => {};
 type GConstructor<T = {}> = new (...args: any[]) => T;
 
 type WithBody = GConstructor<{ body?: string }>;
