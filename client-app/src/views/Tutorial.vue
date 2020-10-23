@@ -16,15 +16,15 @@
           >
         </div>
         <span>{{ activetutorial.author.name }}</span>
-        <b-avatar class="mx-2"></b-avatar>
+        <b-avatar class="mx-2 profilepicture"></b-avatar>
       </div>
     </div>
     <div class="tutorial-body p-4">
       <div class="tutorial-tags mb-4">
-        <img :src="activetutorial.complexity" alt="complexity" />
-        <img :src="activetutorial.type" alt="type" />
-        <img :src="activetutorial.language" alt="language" />
-        <img :src="activetutorial.framework" alt="framework" />
+        <img class="mr-4" :src="activetutorial.complexity" alt="complexity" />
+        <img class="mr-4" :src="activetutorial.type" alt="type" />
+        <img class="mr-4" :src="activetutorial.language" alt="language" />
+        <img class="mr-4" :src="activetutorial.framework" alt="framework" />
       </div>
       <div v-html="activetutorial.body"></div>
     </div>
@@ -84,7 +84,7 @@ export default {
     justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -106,31 +106,15 @@ export default {
     .tags {
       display: flex;
       align-items: center;
-
-      .tag {
-        position: relative;
-        top: 25%;
-        margin-right: 10px;
-        padding: 5px;
-        border-radius: 2px;
-      }
     }
 
     .profilepicture {
-      height: 30px;
-
-      img {
-        height: inherit !important;
-      }
-    }
-
-    .profilepicture:hover {
       cursor: pointer;
     }
   }
 
   .tutorial-body {
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
     padding: 5px;
     text-align: left;
 
@@ -145,10 +129,10 @@ export default {
 }
 .heart-icon {
   margin-top: 5px;
+  cursor: pointer;
 
   &:hover {
     color: var(--dark-primary);
-    cursor: pointer;
   }
 }
 </style>
