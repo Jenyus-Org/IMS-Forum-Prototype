@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "frameworks",
+  "info": {
+    "name": "Framework"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tutorials": {
+      "via": "framework",
+      "collection": "tutorial"
+    }
+  }
+}
