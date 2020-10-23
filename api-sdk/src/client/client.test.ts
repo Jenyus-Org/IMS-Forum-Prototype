@@ -4,8 +4,13 @@ import Client, { EmailAlreadyTakenError } from "./client";
 const expect = chai.expect;
 
 describe("Strapi Client", () => {
+  let client: Client;
+
+  beforeEach(() => {
+    client = new Client("http://localhost:8082/");
+  });
+
   it("Should be able to register users.", async () => {
-    const client = new Client();
     let resp;
 
     try {
@@ -21,7 +26,6 @@ describe("Strapi Client", () => {
   });
 
   it("Should be able to login with the user credentials", async () => {
-    const client = new Client();
     let resp;
     try {
       resp = await client.login({

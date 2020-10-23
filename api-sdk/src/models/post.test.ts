@@ -4,9 +4,13 @@ import Client from "../client";
 const expect = chai.expect;
 
 describe("Post", () => {
-  it("Should be able to comment under posts.", async () => {
+  let client: Client;
+
+  beforeEach(() => {
+    client = new Client("http://localhost:8082/");
+  });
+
   it("Should be able to read a post's raw body and markdown to HTML output.", async () => {
-    const client = new Client();
     client.posts.get(1).then(async (post) => {
       post.bodyHTML;
     });
@@ -32,8 +36,8 @@ describe("Post", () => {
         });
       });
   });
+
   it("Should be able to read a post's author.", async () => {
-    const client = new Client();
     client.posts.get(1).then(async (post) => {
       await post.author?.fetch();
       expect(post.author.username).to.be.equal("TestUser");
