@@ -25,4 +25,6 @@ class _Post extends Submission {
 
 const Post = Toc(_Post);
 
+export type PostType = InstanceType<typeof Post>;
+
 export default Post;
