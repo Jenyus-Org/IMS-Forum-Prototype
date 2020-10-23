@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import General from "../views/General";
 import Tutorials from "../views/Tutorials";
 import Tutorial from "../views/Tutorial";
+import CreateTutorial from "../views/CreateTutorial";
 import Settings from "../views/Settings";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
@@ -32,6 +33,11 @@ const routes = [
         path: "/tutorial/:id",
         name:"tutorial",
         component: Tutorial
+      },
+      {
+        path: "/create-tutorial",
+        name: "create-tutorial",
+        component: CreateTutorial
       },
       {
         path: "/settings",
