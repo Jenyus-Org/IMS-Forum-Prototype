@@ -2,6 +2,8 @@ import Comment from "./comment";
 import Submission from "./submission";
 
 export default class Post extends Submission {
+  public title?: string;
+
   public async comment({ body }: { body: string }) {
     const data = await this.client.post("/comments", {
       body,

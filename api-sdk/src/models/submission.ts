@@ -4,7 +4,6 @@ import User from "./user";
 
 export default abstract class Submission extends Thing {
   /* Lazily loaded attributes. */
-  public title?: string;
   public body?: string;
 
   /* Author */
