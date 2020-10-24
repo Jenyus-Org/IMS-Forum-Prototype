@@ -1,6 +1,6 @@
 import Client from "../client";
 import Comment from "./comment";
-import Post from "./post";
+import Post, { PostType } from "./post";
 
 export default class User {
   public id: number;
@@ -29,7 +29,7 @@ export default class User {
 
   /* Posts */
 
-  private _posts?: Post[];
+  private _posts?: PostType[];
 
   get posts() {
     return this._posts || [];

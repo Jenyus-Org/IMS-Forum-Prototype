@@ -1,11 +1,11 @@
-import Post from "../models/post";
+import Post, { PostType } from "../models/post";
 import Client from "./client";
 
 export default class Posts {
   constructor(private client: Client) {}
 
-  public async get(): Promise<Post[]>;
-  public async get(id: number): Promise<Post>;
+  public async get(): Promise<PostType[]>;
+  public async get(id: number): Promise<PostType>;
   public async get(id?: number) {
     if (id) {
       return await new Post({ client: this.client, id }).fetch();
@@ -15,7 +15,13 @@ export default class Posts {
     }
   }
 
-  public async create({ title, body }: { title: string; body: string }) {
+  public async create({
+    title,
+    body,
+  }: {
+    title: string;
+    body: string;
+  }): Promise<PostType> {
     const data = await this.client.post("/posts", {
       title,
       body,

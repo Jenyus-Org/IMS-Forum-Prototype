@@ -1,11 +1,18 @@
+import { Markdown } from "../helpers/markdown";
 import Comment from "./comment";
 import Thing from "./thing";
 import User from "./user";
 
 export default abstract class Submission extends Thing {
   /* Lazily loaded attributes. */
-  public title?: string;
   public body?: string;
+
+  /* Body */
+
+  get bodyHTML() {
+    const md = Markdown();
+    return this.body && md.render(this.body);
+  }
 
   /* Author */
 

@@ -26,8 +26,8 @@
       "via": "comments"
     },
     "parentTutorial": {
-      "model": "tutorial",
-      "via": "comments"
+      "via": "comments",
+      "model": "tutorial"
     },
     "parentPost": {
       "via": "comments",

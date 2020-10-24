@@ -1,44 +1,10 @@
-import Thing from "./thing";
-import User from "./user";
+import Submission from "./submission";
 
-export default class Comment extends Thing {
+export default class Comment extends Submission {
   /* Lazily loaded attributes. */
-  public body?: string;
   public parentComment?: number;
   public parentTutorial?: number;
   public parentPost?: number;
-
-  /* Author */
-
-  public _author?: User;
-
-  get author() {
-    return this._author;
-  }
-
-  set author(newAuthor: any) {
-    let na = newAuthor;
-    if (!isNaN(newAuthor)) {
-      na = new User({ id: newAuthor, client: this.client });
-    } else {
-      na = new User({ client: this.client, ...newAuthor });
-    }
-    this._author = na;
-  }
-
-  /* Comments */
-
-  private _comments?: Comment[];
-
-  get comments() {
-    return this._comments || [];
-  }
-
-  set comments(newComments: any[]) {
-    this._comments = newComments.map((c) =>
-      c instanceof Comment ? c : new Comment({ client: this.client, ...c })
-    );
-  }
 
   get parent() {
     if (this.parentPost) {

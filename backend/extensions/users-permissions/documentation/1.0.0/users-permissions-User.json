@@ -1363,6 +1363,18 @@
                 "title": {
                   "type": "string"
                 },
+                "category": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                },
+                "framework": {
+                  "type": "string"
+                },
+                "complexity": {
+                  "type": "integer"
+                },
                 "created_by": {
                   "type": "string"
                 },

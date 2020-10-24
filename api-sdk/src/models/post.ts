@@ -1,7 +1,11 @@
 import Comment from "./comment";
+import Toc from "./mixins/tocMixin";
 import Submission from "./submission";
 
-export default class Post extends Submission {
+class _Post extends Submission {
+  /* Lazily loaded attributes. */
+  public title?: string;
+
   public async comment({ body }: { body: string }) {
     const data = await this.client.post("/comments", {
       body,
@@ -19,3 +23,9 @@ export default class Post extends Submission {
     return this;
   }
 }
+
+const Post = Toc(_Post);
+
+export type PostType = InstanceType<typeof Post>;
+
+export default Post;

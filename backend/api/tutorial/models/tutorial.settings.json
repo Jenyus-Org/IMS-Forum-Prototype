@@ -13,8 +13,8 @@
       "type": "richtext"
     },
     "comments": {
-      "via": "parentTutorial",
-      "collection": "comment"
+      "collection": "comment",
+      "via": "parentTutorial"
     },
     "tags": {
       "collection": "tag",
@@ -27,6 +27,23 @@
     },
     "title": {
       "type": "string"
+    },
+    "category": {
+      "model": "category",
+      "via": "tutorials"
+    },
+    "language": {
+      "model": "language",
+      "via": "tutorials"
+    },
+    "framework": {
+      "model": "framework",
+      "via": "tutorials"
+    },
+    "complexity": {
+      "type": "integer",
+      "min": 1,
+      "max": 6
     }
   }
 }
