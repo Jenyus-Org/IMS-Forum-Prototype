@@ -1,12 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import General from "../views/General";
-import Tutorials from "../views/Tutorials";
-import Tutorial from "../views/Tutorial";
-import CreateTutorial from "../views/CreateTutorial";
 import Settings from "../views/Settings";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
+import SubmitTutorial from "../views/SubmitTutorial";
+import Tutorial from "../views/Tutorial";
+import Tutorials from "../views/Tutorials";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -27,17 +28,17 @@ const routes = [
       {
         path: "/tutorials",
         name: "tutorials",
-        component: Tutorials
+        component: Tutorials,
+      },
+      {
+        path: "/tutorials/submit",
+        name: "submitTutorial",
+        component: SubmitTutorial,
       },
       {
         path: "/tutorials/:id",
-        name:"tutorial",
-        component: Tutorial
-      },
-      {
-        path: "/create-tutorial",
-        name: "create-tutorial",
-        component: CreateTutorial
+        name: "tutorial",
+        component: Tutorial,
       },
       {
         path: "/settings",
@@ -54,7 +55,7 @@ const routes = [
   {
     path: "/register",
     name: "Register",
-    component: SignUp
+    component: SignUp,
   },
 ];
 
