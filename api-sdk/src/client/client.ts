@@ -45,7 +45,7 @@ export default class Client {
             case strapiErrors.REGISTER_EMAIL_TAKEN:
               throw new EmailAlreadyTakenError(message.message);
             default:
-              console.error("An error occured:", error.response);
+              console.error("An error occurred:", error.response);
           }
         }
       }
@@ -60,7 +60,7 @@ export default class Client {
       this.token = resp.data.jwt;
       this.user = new User({ client: this, ...resp.data.user });
     } catch (error) {
-      console.error("An error occured:", error.response);
+      console.error("An error occurred:", error.response);
       throw error;
     }
     return this.user;
