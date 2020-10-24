@@ -1,3 +1,4 @@
+import { PostType } from "./post";
 import Submission from "./submission";
 
 export default class Comment extends Submission {
@@ -6,14 +7,11 @@ export default class Comment extends Submission {
   public parentTutorial?: number;
   public parentPost?: number;
 
-  get parent() {
+  get parent(): Promise<PostType | Comment> | null {
     if (this.parentPost) {
       return this.client.posts.get(this.parentPost);
     } else if (this.parentComment) {
-      return (async () => {
-        const data = await this.client.get("/comments" + this.parentComment);
-        return new Comment({ client: this.client, ...data });
-      })();
+      return this.client.comments.get(this.parentComment);
     }
     return null;
   }
