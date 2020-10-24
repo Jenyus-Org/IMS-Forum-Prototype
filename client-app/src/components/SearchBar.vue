@@ -2,15 +2,20 @@
   <div class="searchbar-container">
     <b-form class="searchbar">
       <div class="filtered-search">
-        <b-form-input type="text" placeholder="Search" class="search-input"></b-form-input>
+        <b-form-input
+          type="text"
+          placeholder="Search"
+          class="search-input"
+        ></b-form-input>
         <div class="filter">
           <b-dropdown class="dropdown" :text="selectedBasicFilter">
             <b-dropdown-item
               v-for="basicfilter in basicfilters"
               :key="basicfilter.id"
               @click="choose(basicfilter.name, 1)"
-              >{{ basicfilter.name }}</b-dropdown-item
             >
+              {{ basicfilter.name }}
+            </b-dropdown-item>
           </b-dropdown>
         </div>
         <div class="filter">
@@ -19,8 +24,9 @@
               v-for="language in languages"
               :key="language.id"
               @click="choose(language.name, 2)"
-              >{{ language.name }}</b-dropdown-item
             >
+              {{ language.name }}
+            </b-dropdown-item>
           </b-dropdown>
         </div>
         <div class="filter">
@@ -29,8 +35,9 @@
               v-for="framework in frameworks"
               :key="framework.id"
               @click="choose(framework.name, 3)"
-              >{{ framework.name }}</b-dropdown-item
             >
+              {{ framework.name }}
+            </b-dropdown-item>
           </b-dropdown>
         </div>
         <div class="filter">
@@ -39,8 +46,9 @@
               v-for="comp in complexities"
               :key="comp"
               @click="choose(comp, 4)"
-              >{{ comp }}</b-dropdown-item
             >
+              {{ comp }}
+            </b-dropdown-item>
           </b-dropdown>
         </div>
         <FontAwesomeIcon class="icon fa-lg search-icon" icon="search" />
@@ -96,9 +104,9 @@ export default {
       }
     },
   },
-  components:{
-    FontAwesomeIcon
-  }
+  components: {
+    FontAwesomeIcon,
+  },
 };
 </script>
 
