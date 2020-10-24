@@ -3,6 +3,7 @@ import Toc from "./mixins/tocMixin";
 import Submission from "./submission";
 
 class _Post extends Submission {
+  /* Lazily loaded attributes. */
   public title?: string;
 
   public async comment({ body }: { body: string }) {
