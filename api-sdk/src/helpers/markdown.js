@@ -1,7 +1,7 @@
 import hljs from "highlight.js";
+import MarkdownToc from "markdown-toc-unlazy";
 import { Remarkable } from "remarkable";
 import { linkify } from "remarkable/linkify";
-import MarkdownToc from "markdown-toc";
 
 function Markdown() {
   const md = new Remarkable({
@@ -40,3 +40,4 @@ function Markdown() {
 }
 
 export { Markdown, MarkdownToc };
+
