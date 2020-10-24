@@ -29,7 +29,7 @@ Almost done.`)
     );
   });
 
-  it("Should be able to render an HTML table of contents from markdown.", () => {
+  it("Should be able to generate a markdown table of contents.", () => {
     const toc = MarkdownToc(`# My Tutorial
 
 Some text.
