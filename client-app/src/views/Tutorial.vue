@@ -21,12 +21,15 @@
     </div>
     <div class="tutorial-body p-4">
       <div class="tutorial-tags mb-4">
-        <img class="mr-4" :src="activetutorial.complexity" alt="complexity" />
-        <img class="mr-4" :src="activetutorial.type" alt="type" />
-        <img class="mr-4" :src="activetutorial.language" alt="language" />
-        <img class="mr-4" :src="activetutorial.framework" alt="framework" />
+        <img class="mr-3" :src="activetutorial.complexity" alt="complexity" />
+        <img class="mr-3" :src="activetutorial.type" alt="type" />
+        <img class="mr-3" :src="activetutorial.language" alt="language" />
+        <img class="mr-3" :src="activetutorial.framework" alt="framework" />
       </div>
-      <div v-html="activetutorial.body"></div>
+      <b-card title="Contents" class="mx-0 my-4 px-2 py-0">
+        <b-card-text v-if="post" v-html="post.tocHTML"></b-card-text>
+      </b-card>
+      <div v-if="post" v-html="post.bodyHTML"></div>
     </div>
   </div>
 </template>
@@ -37,6 +40,11 @@ export default {
   name: "tutorial",
   components: {
     FontAwesomeIcon,
+  },
+  data() {
+    return {
+      post: null,
+    };
   },
   computed: {
     activetutorial: function () {
@@ -71,6 +79,9 @@ export default {
       };
       return fetchedTutorial;
     },
+  },
+  mounted() {
+    this.$strapi.posts.get(1).then((post) => (this.post = post));
   },
 };
 </script>
@@ -120,9 +131,10 @@ export default {
 
     .tutorial-tags {
       display: flex;
+      padding: 10px;
 
       img {
-        height: 60px;
+        height: 50px;
       }
     }
   }
