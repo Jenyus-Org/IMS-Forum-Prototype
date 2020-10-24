@@ -23,8 +23,7 @@
     "markdown-it-ins": "^3.0.0",
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-toc": "^1.2.0",
-    "remarkable": "^2.0.1"
+    "markdown-toc": "^1.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.13",

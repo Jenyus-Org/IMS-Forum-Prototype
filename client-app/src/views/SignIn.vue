@@ -8,7 +8,6 @@
             <b-form-input
               class="input mt-2"
               placeholder="Enter your name"
-              v-model="username"
             ></b-form-input>
             <span class="mt-2">*</span>
           </div>
@@ -20,7 +19,6 @@
               class="input mt-2"
               type="password"
               placeholder="Enter your password"
-              v-model="password"
             ></b-form-input>
             <span class="mt-2">*</span>
           </div>
@@ -50,22 +48,12 @@
 <script>
 export default {
   name: "SignIn",
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
   methods: {
     close() {
       this.$router.push("/");
     },
     signIn() {
-      if (this.username && this.password) {
-        this.$strapi
-          .login({ identifier: this.username, password: this.password })
-          .then(() => this.$router.push("/"));
-      }
+      this.$router.push("/");
     },
     register() {
       this.$router.push("/register");

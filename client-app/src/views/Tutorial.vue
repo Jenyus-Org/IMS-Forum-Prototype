@@ -26,8 +26,7 @@
         <img class="mr-4" :src="activetutorial.language" alt="language" />
         <img class="mr-4" :src="activetutorial.framework" alt="framework" />
       </div>
-      <div v-if="post" v-html="post.toc"></div>
-      <div v-if="post" v-html="post.bodyHTML"></div>
+      <div v-html="activetutorial.body"></div>
     </div>
   </div>
 </template>
@@ -38,11 +37,6 @@ export default {
   name: "tutorial",
   components: {
     FontAwesomeIcon,
-  },
-  data() {
-    return {
-      post: null,
-    };
   },
   computed: {
     activetutorial: function () {
@@ -77,9 +71,6 @@ export default {
       };
       return fetchedTutorial;
     },
-  },
-  mounted() {
-    this.$strapi.posts.get(1).then((post) => (this.post = post));
   },
 };
 </script>

@@ -8,7 +8,6 @@
             <b-form-input
               class="input mt-2"
               placeholder="Create Username"
-              v-model="username"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -19,7 +18,6 @@
             <b-form-input
               class="input mt-2"
               placeholder="Enter your email"
-              v-model="email"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -31,7 +29,6 @@
               class="input mt-2"
               type="password"
               placeholder="Create password"
-              v-model="password"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -43,7 +40,6 @@
               class="input mt-2"
               type="password"
               placeholder="Repeat your password"
-              v-model="passwordConfirm"
             ></b-form-input>
             <span>*</span>
           </div>
@@ -67,33 +63,12 @@
 <script>
 export default {
   name: "SignUp",
-  data() {
-    return {
-      username: "",
-      email: "",
-      password: "",
-      passwordConfirm: "",
-    };
-  },
   methods: {
     signIn() {
       this.$router.push("/signIn");
     },
     register() {
-      if (
-        this.email &&
-        this.password &&
-        this.username &&
-        this.password === this.passwordConfirm
-      ) {
-        this.$strapi
-          .register({
-            email: this.email,
-            username: this.username,
-            password: this.password,
-          })
-          .then(() => this.$router.push("/"));
-      }
+      this.$router.push("/");
     },
   },
 };
