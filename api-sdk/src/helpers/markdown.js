@@ -1,6 +1,7 @@
 import hljs from "highlight.js";
 import MarkdownToc from "markdown-toc-unlazy";
 import { Remarkable } from "remarkable";
+import remarkableEmoji from "remarkable-emoji";
 import { linkify } from "remarkable/linkify";
 
 function Markdown() {
@@ -35,6 +36,7 @@ function Markdown() {
   });
 
   md.use(linkify);
+  md.use(remarkableEmoji);
 
   return md;
 }
