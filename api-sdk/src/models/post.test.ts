@@ -1,5 +1,6 @@
 import chai from "chai";
 import Client from "../client";
+import { Markdown } from "../helpers/markdown";
 
 const expect = chai.expect;
 
@@ -12,7 +13,12 @@ describe("Post", () => {
 
   it("Should be able to read a post's raw body and markdown to HTML output.", async () => {
     client.posts.get(1).then(async (post) => {
-      post.bodyHTML;
+      expect(post.body).to.be.a("string");
+
+      const md = Markdown();
+      const bodyHTML = md.render(post.body!!);
+
+      expect(post.bodyHTML).to.be.equal(bodyHTML);
     });
   });
 
