@@ -4,5 +4,9 @@
   },
   "[csharp]": {
     "editor.tabSize": 4
-  }
+  },
+  "cSpell.words": [
+    "creds",
+    "strapi"
+  ]
 }
