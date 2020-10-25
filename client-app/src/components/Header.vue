@@ -34,20 +34,21 @@ export default {
   height: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   top: 0;
-}
-.text {
-  align-self: center;
-  a {
-    padding: 10px;
-    padding-bottom: 5px;
-    color: white;
-    &:hover {
-      cursor: pointer;
-      text-decoration: none;
+  text-align: center;
+  .text {
+    align-self: center;
+    a {
+      padding: 10px;
+      padding-bottom: 5px;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
     }
   }
-}
-.header-content {
-  flex: 1;
+  .header-content {
+    flex: 1;
+  }
 }
 </style>

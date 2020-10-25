@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center">Submit a Tutorial</h1>
+    <h1 class="title">Submit a Tutorial</h1>
     <div class="d-flex my-4">
       <b-dropdown class="dropdown" :text="selectedBasicFilter">
         <b-dropdown-item
@@ -43,6 +43,7 @@
       @change="onContentChange"
       :initialValue="text"
       ref="toastuiEditor"
+      height="550px"
     />
   </div>
 </template>
@@ -110,4 +111,10 @@ export default {
 
 <style lang="scss">
 @import "../assets/css/searchbar.scss";
+</style>
+
+<style scoped>
+.title {
+  color: var(--dark-primary);
+}
 </style>
