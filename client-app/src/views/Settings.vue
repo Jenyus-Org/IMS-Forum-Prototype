@@ -1,9 +1,9 @@
 <template>
   <div class="settings">
     <div class="activities">
-      <div class="description">
+      <div class="description mb-4">
         <p class="title">Description</p>
-        <p class="body">
+        <p class="body mx-3">
           Hi, my name is Developer 1. My passion is frontend coding with a focus
           on design. I designed this website for instance. I mainly code in
           Javascript but I am also used to BackEnd languages like C# or Java.
@@ -13,18 +13,27 @@
       </div>
       <div class="featured">
         <p class="title">Featured</p>
-        <div class="card-container">
-          <div v-for="feat in featured" :key="feat.id" class="card">
+        <div
+          class="card-container d-flex flex-wrap justify-content-between p-2 align-content-center"
+        >
+          <div
+            v-for="feat in featured"
+            :key="feat.id"
+            class="card m-2"
+            style="min-width: 400px; flex: 1"
+          >
             <div>
-              <div class="title-header">
-                <p>{{ feat.submission.name }}</p>
-                <div style="display: flex">
-                  <p class="score">120</p>
-                  <p><FontAwesomeIcon class="icon fa-sm" icon="paw" /></p>
+              <div class="title-header p-2 align-items-center">
+                <p class="mb-0">{{ feat.submission.name }}</p>
+                <div class="d-flex align-items-center">
+                  <p class="mb-0 mr-1 score">120</p>
+                  <p class="mb-0">
+                    <FontAwesomeIcon class="icon fa-sm" icon="paw" />
+                  </p>
                 </div>
               </div>
-              <div class="body">
-                <span style="font-weight: bold">{{
+              <div class="body p-2">
+                <span class="font-weight-bold">{{
                   feat.type.toUpperCase()
                 }}</span>
                 <p style="word-break: break-word">
@@ -44,15 +53,17 @@
       </div>
     </div>
     <div class="profile">
-      <div class="profile-generals">
-        <b-avatar class="mx-2"></b-avatar>
-        <span class="name">{{ $strapi.user.username }}</span>
+      <div class="profile-generals py-3">
+        <b-avatar class="mt-2 mb-3"></b-avatar>
+        <span class="name font-weight-bold mb-1">{{
+          $strapi.user.username
+        }}</span>
         <div class="score">
           <span><FontAwesomeIcon class="icon fa-sm" icon="paw" /></span>
           <span>6520</span>
         </div>
       </div>
-      <div class="tags-container">
+      <div class="tags-container py-2">
         <b-badge
           class="mr-2"
           :style="{ background: tag.colour }"
@@ -62,12 +73,12 @@
         >
       </div>
       <div class="socialmedia-container">
-        <div class="socialmedia">
+        <div class="socialmedia p-1 m-1">
           <a><FontAwesomeIcon class="icon fa-lg" icon="heart" /></a>
           <a><FontAwesomeIcon class="icon fa-lg" icon="heart" /></a>
           <a><FontAwesomeIcon class="icon fa-lg" icon="heart" /></a>
         </div>
-        <div class="add" :class="{ hidden: !personalProfile }">
+        <div class="add p-2" :class="{ hidden: !personalProfile }">
           <b-form-select
             class="select"
             v-model="selectedSocialMedia"
@@ -149,7 +160,7 @@
               <FontAwesomeIcon
                 :class="{ hidden: !edit, save: edit }"
                 class="icon fa-sm"
-                style="margin-top:2px"
+                style="margin-top: 2px"
                 icon="save"
                 @click="editWebsite(website)" />
               <FontAwesomeIcon
@@ -259,7 +270,7 @@ export default {
   },
   methods: {
     editWebsite(website) {
-      if(website != ""){
+      if (website != "") {
         this.personalwebsite = website;
       }
       this.edit = !this.edit;
@@ -276,7 +287,7 @@ export default {
   display: flex;
   .activities {
     flex: 0.8;
-    margin: 5px;
+    margin: 5px 25px 5px 5px;
     text-align: left;
     .description {
       margin: 0 auto;
@@ -306,15 +317,10 @@ export default {
       justify-content: space-between;
       padding-left: 5px;
       padding-right: 5px;
-      background-color: var(--dark-primary);
-      color: var(--white);
+      color: var(--dark-primary);
+      border-bottom: #dae0e6 solid 1px;
       .score {
-        padding: 3px;
         font-size: 14px;
-      }
-      p {
-        position: relative;
-        top: 6px;
       }
     }
     .body {
@@ -350,9 +356,10 @@ export default {
       }
     }
     .add {
-      border-top: solid 2px var(--dark-primary);
+      border-top: #dae0e6 solid 1px;
       display: flex;
       flex-direction: column;
+      padding: 7px;
       .select {
         width: calc(100% - 10px);
         margin: 0 auto;
@@ -398,36 +405,37 @@ export default {
     .add-btn {
       padding: 5px;
       color: var(--dark-primary);
-      .icon:hover{
-        cursor:pointer;
+      .icon:hover {
+        cursor: pointer;
       }
     }
     .interests-container {
       width: 90%;
       margin: 0 auto;
       margin-top: 10px;
+      padding-bottom: 15px;
       .collection {
-        margin-top: 5px;
+        margin-top: 15px;
         margin-bottom: 5px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         display: flex;
         flex-direction: column;
         .title {
           margin: 0px;
-          padding-left: 5px;
-          color: var(--white);
+          padding: 10px 10px 10px 12px;
           text-align: left;
-          background-color: var(--dark-primary);
+          color: var(--dark-primary);
+          border-bottom: solid 2px var(--dark-primary);
         }
         .body {
           display: flex;
           text-align: left;
-          padding: 5px;
+          padding: 10px;
           flex-direction: column;
           .icon {
             color: var(--dark-primary);
-            &:hover{
-              cursor:pointer;
+            &:hover {
+              cursor: pointer;
             }
           }
           .personal-website {
@@ -442,10 +450,10 @@ export default {
               border: none;
             }
           }
-          .save{
-            position:relative;
-            left:50%;
-            transform:translateX(-50%);
+          .save {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
           }
         }
       }
