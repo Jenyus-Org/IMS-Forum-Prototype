@@ -36,7 +36,7 @@ export default {
   padding: 10px;
   width: 100%;
   justify-content: space-around;
-  background-color: var(--light-secondary);
+  border-top: solid 2px var(--light-secondary);
 }
 .link {
   color: var(--font-colour);
