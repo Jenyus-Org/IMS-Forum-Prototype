@@ -8,6 +8,7 @@
     no-close-on-backdrop
     no-close-on-route-change
     no-header
+    class="sidebar"
   >
     <div class="px-3 py-2">
       <div class="nav-header"><span>Imorum</span></div>
@@ -31,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss">
+.b-sidebar {
+  top: 50px;
+}
 .b-sidebar > .b-sidebar-body {
   overflow-y: auto;
   background-color: #f5f5f5;
@@ -38,7 +42,7 @@ export default {
   border-bottom-right-radius: 2px;
   padding: 1rem 10px 2rem 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
-  width: 200px;
+  width: 250px;
   min-width: 150px;
   padding: 0;
 }
@@ -46,7 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/css/nav.css";
-
 .nav-header {
   height: 50px;
   align-items: center;

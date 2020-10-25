@@ -46,7 +46,7 @@ export default {
   justify-content: space-between;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: var(--dark-primary);
+  background-color: #24292E;
   height: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   top: 0;
