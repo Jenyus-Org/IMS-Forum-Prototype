@@ -16,7 +16,7 @@
       </div>
     </div>
     <div v-else class="header-content text">
-      <router-link to="signIn">Sign In</router-link>
+      <router-link to="/signIn">Sign In</router-link>
     </div>
   </div>
 </template>
