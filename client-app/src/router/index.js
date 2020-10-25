@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import General from "../views/General";
+import Home from "../views/Home";
 import Tutorials from "../views/Tutorials";
 import Tutorial from "../views/Tutorial";
 import CreateTutorial from "../views/CreateTutorial";
@@ -15,6 +16,11 @@ const routes = [
     name: "General",
     component: General,
     children: [
+      {
+        path: "/home",
+        name: "home",
+        component: Home
+      },
       {
         path: "/about",
         name: "About",

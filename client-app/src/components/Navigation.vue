@@ -2,7 +2,7 @@
   <Sidebar>
     <div class="sidenav-links">
       <div class="align-top">
-        <router-link class="nav-link" exact-active-class="active" to="/">
+        <router-link class="nav-link" exact-active-class="active" to="home">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="home" />
             <span class="link-title">Home</span>
