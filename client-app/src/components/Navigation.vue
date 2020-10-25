@@ -8,7 +8,17 @@
             <span class="link-title">Home</span>
           </div>
         </router-link>
-        <router-link class="nav-link" exact-active-class="active" to="tutorials">
+        <router-link class="nav-link" exact-active-class="active" to="forum">
+          <div class="navlink-container">
+            <FontAwesomeIcon class="icon fa-sm" icon="comment" />
+            <span class="link-title">Forum</span>
+          </div>
+        </router-link>
+        <router-link
+          class="nav-link"
+          exact-active-class="active"
+          to="tutorials"
+        >
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="chalkboard" />
             <span class="link-title">Tutorial</span>

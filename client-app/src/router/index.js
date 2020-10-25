@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import General from "../views/General";
 import Home from "../views/Home";
+import Forum from "../views/Forum";
 import Tutorials from "../views/Tutorials";
 import Tutorial from "../views/Tutorial";
 import CreateTutorial from "../views/CreateTutorial";
@@ -29,6 +30,11 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      },
+      {
+        path: "/forum",
+        name: "forum",
+        component: Forum
       },
       {
         path: "/tutorials",
