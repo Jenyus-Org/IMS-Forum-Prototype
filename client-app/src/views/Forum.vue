@@ -29,7 +29,10 @@
               </span>
             </div>
           </div>
-          <div class="body" v-html="post.bodyHTML"></div>
+          <div class="body">
+            {{ post.body.substring(0, 250) }}
+            {{ post.body.substring(250) && "..." }}
+          </div>
           <div class="footer">
             <div class="actions">
               <span>
@@ -74,21 +77,6 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.body {
-  img {
-    width: 100%;
-  }
-  pre > code {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #abb2bf;
-    background: #282c34;
-  }
-}
-</style>
 
 <style scoped lang="scss">
 .forum {
