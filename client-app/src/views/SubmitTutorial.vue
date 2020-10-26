@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">Submit a Tutorial</h1>
+    <h1 class="title pb-2">Submit a Tutorial</h1>
     <div class="d-flex">
       <editor
         @change="onContentChange"
@@ -102,7 +102,7 @@
               </b-dropdown-item>
             </b-dropdown>
           </div>
-          <div class="text-center d-block w-100 mt-1 pt-3" style="border-top: solid 1px #e5e5e5">
+          <div class="text-right d-block w-100 mt-1 pt-3 pr-2 pb-1" style="border-top: solid 1px #e5e5e5">
             <b-button>Submit</b-button>
           </div>
         </div>
