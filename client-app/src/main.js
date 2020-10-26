@@ -21,6 +21,7 @@ import {
   faCode,
   faEdit,
   faSave,
+  faRuler,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "highlight.js/styles/atom-one-dark.css";
@@ -36,6 +37,7 @@ library.add(faPlus);
 library.add(faCode);
 library.add(faEdit);
 library.add(faSave);
+library.add(faRuler);
 
 Vue.config.productionTip = false;
 
