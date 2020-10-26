@@ -1,5 +1,6 @@
 <template>
   <div class="internships">
+    <SwissMap  style="padding-bottom:5px;"/>
     <p class="title">Internships</p>
     <div
       class="card-container d-flex flex-wrap justify-content-between p-2 align-content-center"
@@ -12,7 +13,9 @@
       >
         <div class="header">
           <div class="header-content">
-            <span style="padding-left:5px; padding-right:5px;">{{ intern.company }}</span>
+            <span style="padding-left: 5px; padding-right: 5px">{{
+              intern.company
+            }}</span>
           </div>
         </div>
         <div class="body">
@@ -23,7 +26,9 @@
               <span>{{ intern.location }}</span>
             </div>
           </div>
-          <p style="padding-left:5px; padding-right:5px;">{{ intern.description }}</p>
+          <p style="padding-left: 5px; padding-right: 5px">
+            {{ intern.description }}
+          </p>
         </div>
       </div>
     </div>
@@ -32,9 +37,13 @@
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import SwissMap from "@/components/SwissMap";
 
 export default {
   name: "internships",
+  components: {
+    SwissMap,
+  },
   data() {
     return {
       internships: [
