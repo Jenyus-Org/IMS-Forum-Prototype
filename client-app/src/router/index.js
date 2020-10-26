@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Forum from "../views/Forum";
 import General from "../views/General";
+import Home from "../views/Home";
+import Post from "../views/Post";
 import Settings from "../views/Settings";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
@@ -8,6 +11,7 @@ import SubmitTutorial from "../views/SubmitTutorial";
 import Tutorial from "../views/Tutorial";
 import Tutorials from "../views/Tutorials";
 import Internships from "../views/Internships";
+import Tutoring from "../views/Tutoring";
 
 Vue.use(VueRouter);
 
@@ -18,6 +22,11 @@ const routes = [
     component: General,
     children: [
       {
+        path: "/home",
+        name: "home",
+        component: Home
+      },
+      {
         path: "/about",
         name: "About",
         // route level code-splitting
@@ -25,6 +34,16 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      },
+      {
+        path: "/forum",
+        name: "forum",
+        component: Forum
+      },
+      {
+        path: "/post/:id",
+        name: "post",
+        component:Post,
       },
       {
         path: "/tutorials",
@@ -45,6 +64,11 @@ const routes = [
         path: "/internships",
         name: "internships",
         component: Internships,
+      },
+      {
+        path: "/tutoring",
+        name: "tutoring",
+        component: Tutoring
       },
       {
         path: "/user/:id",
