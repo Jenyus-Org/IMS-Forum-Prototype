@@ -11,7 +11,7 @@
               v-for="tutor in tutors"
               :key="tutor.id"
               class="card m-2"
-              style=" flex: 1"
+              style="flex: 1"
             >
               <div class="header">
                 <b-avatar class="mx-2"></b-avatar>
@@ -114,12 +114,21 @@
       </div>
     </div>
     <div class="forum-specification">
-      <div class="faq"></div>
+      <div class="faq">
+        <span class="title">FAQ</span>
+        <span class="subtitle">Subtitle 1</span>
+        <p class="body">Ims qustion 1</p>
+        <p class="body">Ims question 2</p>
+        <span class="subtitle">Subtitle 2</span>
+        <p class="body">Ims question 3</p>
+      </div>
       <div class="rules">
-        <div class="paragraph">
-          <span class="title"></span>
-          <p class="body"></p>
-        </div>
+        <span class="title">Rules</span>
+        <span class="subtitle">Code of Conduct</span>
+        <p class="body">Code #1</p>
+        <p class="body">Code #2</p>
+        <span class="subtitle">Privacy</span>
+        <p class="body">Rule #1</p>
       </div>
     </div>
   </div>
@@ -240,7 +249,9 @@ export default {
 
 <style scoped lang="scss">
 .dashboard {
+  display: flex;
   .content {
+    flex: 0.8;
     .title {
       background-color: var(--dark-primary);
       color: var(--white);
@@ -345,6 +356,51 @@ export default {
           justify-content: flex-end;
           margin: 5px;
         }
+      }
+    }
+  }
+  .forum-specification {
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height:100%;
+    .title {
+      flex: 1;
+      background-color: var(--dark-primary);
+      color: var(--white);
+      padding: 10px;
+    }
+    .faq {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin-bottom: 5px;
+      .subtitle {
+        text-align: left;
+        font-weight: bold;
+        padding: 2px;
+      }
+      .body {
+        text-align: left;
+        padding: 2px;
+        margin: 0 !important;
+      }
+    }
+    .rules {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin-bottom: 5px;
+      .subtitle {
+        text-align: left;
+        font-weight: bold;
+        padding: 2px;
+      }
+      .body {
+        text-align: left;
+        padding: 2px;
+        margin: 0 !important;
       }
     }
   }
