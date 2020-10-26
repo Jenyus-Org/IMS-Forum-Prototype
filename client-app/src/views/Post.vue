@@ -42,6 +42,13 @@ export default {
   img {
     width: 100%;
   }
+  pre > code {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #abb2bf;
+    background: #282c34;
+  }
 }
 .comments {
   flex: 1;
