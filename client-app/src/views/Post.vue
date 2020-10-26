@@ -6,22 +6,23 @@
         <p>{{ post.content }}</p>
       </div>
     </div>
-    <div class="comment-container">
-      <span class="title">Comment</span>
-      <div
+    <div class="comments p-2" style="overflow: hidden">
+      <comment
         v-for="comment in post.comments"
         :key="comment.id"
-      >
-        <div class="comment-box">
-          <span>{{ comment.content }}</span>
-        </div>
-      </div>
+        :comment="comment"
+      ></comment>
     </div>
   </div>
 </template>
 
 <script>
+import Comment from "../components/Comment";
+
 export default {
+  components: {
+    Comment,
+  },
   name: "Post",
   data() {
     return {
@@ -37,15 +38,18 @@ export default {
               name: "Developer 1",
             },
             created: "26.10.2020",
-          },
-          {
-            id: 2,
-            parent: 1,
-            content: "Comment 1.1",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
+            comments: [
+              {
+                id: 2,
+                parent: 1,
+                content: "Comment 1.1",
+                author: {
+                  name: "Developer 1",
+                },
+                created: "26.10.2020",
+                comments: [],
+              },
+            ],
           },
           {
             id: 3,
@@ -55,6 +59,7 @@ export default {
               name: "Developer 1",
             },
             created: "26.10.2020",
+            comments: [],
           },
           {
             id: 4,
@@ -64,51 +69,60 @@ export default {
               name: "Developer 1",
             },
             created: "26.10.2020",
-          },
-          {
-            id: 5,
-            parent: 4,
-            content: "Comment 3.1",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-          },
-          {
-            id: 6,
-            parent: 5,
-            content: "Comment 3.2",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-          },
-          {
-            id: 7,
-            parent: 6,
-            content: "Comment 3.3",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-          },
-          {
-            id: 8,
-            parent: 7,
-            content: "Comment 3.4",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-          },
-          {
-            id: 9,
-            parent: 5,
-            content: "Comment 3.1.1",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
+            comments: [
+              {
+                id: 5,
+                parent: 4,
+                content: "Comment 3.1",
+                author: {
+                  name: "Developer 1",
+                },
+                created: "26.10.2020",
+                comments: [
+                  {
+                    id: 6,
+                    parent: 5,
+                    content: "Comment 3.1.1",
+                    author: {
+                      name: "Developer 1",
+                    },
+                    created: "26.10.2020",
+                    comments: [
+                      {
+                        id: 7,
+                        parent: 6,
+                        content: "Comment 3.1.1.1",
+                        author: {
+                          name: "Developer 1",
+                        },
+                        created: "26.10.2020",
+                        comments: [
+                          {
+                            id: 8,
+                            parent: 7,
+                            content: "Comment 3.1.1.1.1",
+                            author: {
+                              name: "Developer 1",
+                            },
+                            created: "26.10.2020",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    id: 9,
+                    parent: 5,
+                    content: "Comment 3.2",
+                    author: {
+                      name: "Developer 1",
+                    },
+                    created: "26.10.2020",
+                    comments: [],
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -116,6 +130,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.comments {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  text-align: left;
+}
+</style>
 
 <style scoped lang="scss">
 .post-container {
@@ -136,17 +161,6 @@ export default {
     .post-content {
       text-align: left;
       padding: 5px;
-    }
-  }
-  .comment-container {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    margin: 5px;
-    .title {
-      text-align: left;
-      width: 100%;
     }
   }
 }
