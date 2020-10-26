@@ -27,6 +27,8 @@ import {
   faExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "highlight.js/styles/atom-one-dark.css";
+
 library.add(faUserSecret);
 library.add(faCogs);
 library.add(faHome);

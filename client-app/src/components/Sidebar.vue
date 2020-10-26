@@ -11,7 +11,7 @@
     class="sidebar"
   >
     <div class="px-3 py-2">
-      <div class="nav-header"><span>Imorum</span></div>
+      <div class="nav-header text-center"><span>Imorum</span></div>
       <slot></slot>
     </div>
   </b-sidebar>
