@@ -34,7 +34,9 @@
               <span
                 ><FontAwesomeIcon class="icon fa-sm" icon="exclamation"
               /></span>
-              <span><FontAwesomeIcon class="icon fa-sm" icon="expand" /></span>
+              <span @click="expand(post.id)" class="expand"
+                ><FontAwesomeIcon class="icon fa-sm" icon="expand"
+              /></span>
             </div>
           </div>
         </div>
@@ -50,6 +52,11 @@ export default {
   name: "Forum",
   components: {
     FontAwesomeIcon,
+  },
+  methods: {
+    expand(id) {
+      this.$router.push({ name: "post", params: { id } });
+    },
   },
   data() {
     return {
@@ -166,6 +173,11 @@ export default {
           .actions {
             flex: 1;
             display: flex;
+            .expand{
+                &:hover{
+                    cursor:pointer;
+                }
+            }
             .icon {
               flex: 1;
             }

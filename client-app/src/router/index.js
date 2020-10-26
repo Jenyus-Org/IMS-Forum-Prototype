@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import General from "../views/General";
 import Home from "../views/Home";
 import Forum from "../views/Forum";
+import Post from "../views/Post";
 import Tutorials from "../views/Tutorials";
 import Tutorial from "../views/Tutorial";
 import CreateTutorial from "../views/CreateTutorial";
@@ -35,6 +36,11 @@ const routes = [
         path: "/forum",
         name: "forum",
         component: Forum
+      },
+      {
+        path: "/post/:id",
+        name: "post",
+        component:Post,
       },
       {
         path: "/tutorials",
