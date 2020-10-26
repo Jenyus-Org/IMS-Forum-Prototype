@@ -41,8 +41,8 @@ const routes = [
         component: Tutorial,
       },
       {
-        path: "/settings",
-        name: "Settings",
+        path: "/user/:id",
+        name: "user",
         component: Settings,
       },
     ],

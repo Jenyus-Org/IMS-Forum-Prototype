@@ -16,6 +16,11 @@ import {
   faChalkboard,
   faSearch,
   faHeart,
+  faPaw,
+  faPlus,
+  faCode,
+  faEdit,
+  faSave,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "highlight.js/styles/atom-one-dark.css";
@@ -26,6 +31,11 @@ library.add(faHome);
 library.add(faChalkboard);
 library.add(faSearch);
 library.add(faHeart);
+library.add(faPaw);
+library.add(faPlus);
+library.add(faCode);
+library.add(faEdit);
+library.add(faSave);
 
 Vue.config.productionTip = false;
 

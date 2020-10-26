@@ -37,7 +37,7 @@ export default {
   align-content: space-between;
   min-height: 100vh;
   justify-items: stretch;
-  padding: 50px 0 0 200px;
+  padding: 50px 0 0 250px;
 }
 
 main {
