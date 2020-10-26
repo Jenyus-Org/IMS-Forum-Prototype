@@ -12,7 +12,7 @@
             >
           </div>
           <div class="create-btn-container">
-            <router-link class="btn" to="create-tutorial">Create Tutorial</router-link>
+            <router-link class="btn" :to="{name: 'submitTutorial'}">Create Tutorial</router-link>
           </div>
         </div>
         <div class="description-block">

@@ -86,6 +86,16 @@ export default {
 };
 </script>
 
+<style lang="scss">
+pre > code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+</style>
+
 <style scoped lang="scss">
 .tutorial-overview {
   .tutorial-details {
