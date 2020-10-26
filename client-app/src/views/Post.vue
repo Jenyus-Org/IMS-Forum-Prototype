@@ -1,9 +1,9 @@
 <template>
   <div class="post-container">
-    <div class="post">
+    <div class="post" v-if="post">
       <span class="title">Post</span>
       <div class="post-content">
-        <p>{{ post.content }}</p>
+        <div v-html="post.bodyHTML"></div>
       </div>
     </div>
     <div class="comments p-2" style="overflow: hidden">
@@ -26,112 +26,23 @@ export default {
   name: "Post",
   data() {
     return {
-      post: {
-        content:
-          "Quisque lacus tellus, pretium dapibus eros vel, tincidunt eleifend dui. Nam eu dolor eu nulla dignissim tempor eget quis augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus augue ex, tincidunt vel sapien eu, hendrerit fringilla sem. Proin interdum gravida nunc, nec lacinia urna interdum et.",
-        comments: [
-          {
-            id: 1,
-            parent: undefined,
-            content: "Comment 1",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-            comments: [
-              {
-                id: 2,
-                parent: 1,
-                content: "Comment 1.1",
-                author: {
-                  name: "Developer 1",
-                },
-                created: "26.10.2020",
-                comments: [],
-              },
-            ],
-          },
-          {
-            id: 3,
-            parent: undefined,
-            content: "Comment 2",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-            comments: [],
-          },
-          {
-            id: 4,
-            parent: undefined,
-            content: "Comment 3",
-            author: {
-              name: "Developer 1",
-            },
-            created: "26.10.2020",
-            comments: [
-              {
-                id: 5,
-                parent: 4,
-                content: "Comment 3.1",
-                author: {
-                  name: "Developer 1",
-                },
-                created: "26.10.2020",
-                comments: [
-                  {
-                    id: 6,
-                    parent: 5,
-                    content: "Comment 3.1.1",
-                    author: {
-                      name: "Developer 1",
-                    },
-                    created: "26.10.2020",
-                    comments: [
-                      {
-                        id: 7,
-                        parent: 6,
-                        content: "Comment 3.1.1.1",
-                        author: {
-                          name: "Developer 1",
-                        },
-                        created: "26.10.2020",
-                        comments: [
-                          {
-                            id: 8,
-                            parent: 7,
-                            content: "Comment 3.1.1.1.1",
-                            author: {
-                              name: "Developer 1",
-                            },
-                            created: "26.10.2020",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    id: 9,
-                    parent: 5,
-                    content: "Comment 3.2",
-                    author: {
-                      name: "Developer 1",
-                    },
-                    created: "26.10.2020",
-                    comments: [],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+      post: null,
     };
+  },
+  mounted() {
+    this.$strapi.posts
+      .get(this.$route.params.id)
+      .then((post) => (this.post = post));
   },
 };
 </script>
 
 <style lang="scss">
+.post-content {
+  img {
+    width: 100%;
+  }
+}
 .comments {
   flex: 1;
   display: flex;
@@ -145,6 +56,7 @@ export default {
 <style scoped lang="scss">
 .post-container {
   display: flex;
+  flex-wrap: wrap;
   .post {
     flex: 1;
     display: flex;
@@ -160,6 +72,7 @@ export default {
     }
     .post-content {
       text-align: left;
+      min-width: 400px;
       padding: 5px;
     }
   }

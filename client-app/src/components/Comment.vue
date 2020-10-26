@@ -2,11 +2,9 @@
   <div class="comment">
     <div class="d-block mt-2"></div>
     <span class="text-muted" style="font-size: 14px">
-      {{ comment.author.name }} says:
+      {{ username }} says:
     </span>
-    <p class="m-0 mb-2">
-      {{ comment.content }}
-    </p>
+    <div class="m-0 mb-2" v-html="comment.bodyHTML"></div>
     <div class="comments">
       <comment
         v-for="comment in comment.comments"
@@ -21,6 +19,14 @@
 export default {
   name: "Comment",
   props: ["comment"],
+  data() {
+    return {
+      username: "",
+    };
+  },
+  mounted() {
+    this.comment.author.fetch().then((res) => (this.username = res.username));
+  },
 };
 </script>
 
