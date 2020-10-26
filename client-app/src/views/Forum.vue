@@ -10,33 +10,39 @@
         </div>
         <div class="right-align">
           <div class="author">
-            <span>{{ post.author.name }}</span>
+            <div class="d-flex justify-content-between">
+              <span>
+                <b>
+                  {{ post.title }}
+                </b>
+              </span>
+              <span>{{ post.author.username }}</span>
+            </div>
             <div class="tag-container">
               <span
                 class="tag"
                 v-for="tag in post.author.tags"
                 :key="tag.id"
                 :style="{ background: tag.colour }"
-                >{{ tag.name }}</span
               >
+                {{ tag.name }}
+              </span>
             </div>
           </div>
-          <div class="body">
-            {{ post.content }}
-          </div>
+          <div class="body" v-html="post.bodyHTML"></div>
           <div class="footer">
             <div class="actions">
-              <span
-                >{{ post.commentnumber }}
-                <FontAwesomeIcon class="icon fa-sm" icon="comment"
-              /></span>
+              <span>
+                {{ post.comments.length }}
+                <FontAwesomeIcon class="icon fa-sm" icon="comment" />
+              </span>
               <span><FontAwesomeIcon class="icon fa-sm" icon="share" /></span>
-              <span
-                ><FontAwesomeIcon class="icon fa-sm" icon="exclamation"
-              /></span>
-              <span @click="expand(post.id)" class="expand"
-                ><FontAwesomeIcon class="icon fa-sm" icon="expand"
-              /></span>
+              <span>
+                <FontAwesomeIcon class="icon fa-sm" icon="exclamation" />
+              </span>
+              <span @click="expand(post.id)" class="expand">
+                <FontAwesomeIcon class="icon fa-sm" icon="expand" />
+              </span>
             </div>
           </div>
         </div>
@@ -60,66 +66,20 @@ export default {
   },
   data() {
     return {
-      posts: [
-        {
-          id: 1,
-          author: {
-            id: 1,
-            name: "Developer 1",
-            profilepicture:
-              "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
-            tags: [
-              { id: 1, name: "AKSA", colour: "#f58493" },
-              { id: 2, name: "intern", colour: "#ffde82" },
-              { id: 3, name: "Enhanzz AG", colour: "#7ee7f7" },
-            ],
-          },
-          content:
-            "Nunc rhoncus, tortor et aliquet rhoncus, ex diam interdum dui, sit amet iaculis lorem ligula eu urna. Cras vitae ante sit amet dui maximus varius at non sapien. Donec sapien elit, molestie ac malesuada a, tincidunt a erat. Integer a augue id lorem auctor egestas. Aenean quis tincidunt eros. Sed imperdiet consectetur mi, at cursus ante venenatis vitae. Aliquam enim quam, hendrerit a augue a, faucibus fringilla libero.",
-          likes: 117,
-          commentnumber: 13,
-        },
-        {
-          id: 2,
-          author: {
-            id: 2,
-            name: "Developer 2",
-            profilepicture:
-              "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
-            tags: [
-              { id: 1, name: "AKSA", colour: "#f58493" },
-              { id: 2, name: "intern", colour: "#ffde82" },
-              { id: 3, name: "BlueMouse GmbH", colour: "#7ee7f7" },
-            ],
-          },
-          content:
-            "Nunc rhoncus, tortor et aliquet rhoncus, ex diam interdum dui, sit amet iaculis lorem ligula eu urna. Cras vitae ante sit amet dui maximus varius at non sapien. Donec sapien elit, molestie ac malesuada a, tincidunt a erat. Integer a augue id lorem auctor egestas. Aenean quis tincidunt eros. Sed imperdiet consectetur mi, at cursus ante venenatis vitae. Aliquam enim quam, hendrerit a augue a, faucibus fringilla libero.",
-          likes: 89,
-          commentnumber: 5,
-        },
-        {
-          id: 3,
-          author: {
-            id: 1,
-            name: "Developer 1",
-            profilepicture:
-              "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
-            tags: [
-              { id: 1, name: "AKSA", colour: "#f58493" },
-              { id: 2, name: "intern", colour: "#ffde82" },
-              { id: 3, name: "Enhanzz AG", colour: "#7ee7f7" },
-            ],
-          },
-          content:
-            "Nunc rhoncus, tortor et aliquet rhoncus, ex diam interdum dui, sit amet iaculis lorem ligula eu urna. Cras vitae ante sit amet dui maximus varius at non sapien. Donec sapien elit, molestie ac malesuada a, tincidunt a erat. Integer a augue id lorem auctor egestas. Aenean quis tincidunt eros. Sed imperdiet consectetur mi, at cursus ante venenatis vitae. Aliquam enim quam, hendrerit a augue a, faucibus fringilla libero.",
-          likes: 12,
-          commentnumber: 1,
-        },
-      ],
+      posts: [],
     };
+  },
+  mounted() {
+    this.$strapi.posts.get().then((posts) => (this.posts = posts));
   },
 };
 </script>
+
+<style lang="scss">
+.body img {
+  width: 100%;
+}
+</style>
 
 <style scoped lang="scss">
 .forum {
@@ -173,10 +133,10 @@ export default {
           .actions {
             flex: 1;
             display: flex;
-            .expand{
-                &:hover{
-                    cursor:pointer;
-                }
+            .expand {
+              &:hover {
+                cursor: pointer;
+              }
             }
             .icon {
               flex: 1;
