@@ -25,6 +25,7 @@ import {
   faExpand,
   faShare,
   faExclamation,
+  faSchool,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "highlight.js/styles/atom-one-dark.css";
@@ -44,6 +45,7 @@ library.add(faComment);
 library.add(faExpand);
 library.add(faShare);
 library.add(faExclamation);
+library.add(faSchool);
 
 Vue.config.productionTip = false;
 
