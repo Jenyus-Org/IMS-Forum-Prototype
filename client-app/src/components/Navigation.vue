@@ -14,6 +14,12 @@
             <span class="link-title">Tutorial</span>
           </div>
         </router-link>
+        <router-link class="nav-link" exact-active-class="active" to="tutoring">
+          <div class="navlink-container">
+            <FontAwesomeIcon class="icon fa-sm" icon="school" />
+            <span class="link-title">Tutoring</span>
+          </div>
+        </router-link>
       </div>
       <div class="align-bottom">
         <div class="settings">

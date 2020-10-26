@@ -7,6 +7,7 @@ import SignUp from "../views/SignUp";
 import SubmitTutorial from "../views/SubmitTutorial";
 import Tutorial from "../views/Tutorial";
 import Tutorials from "../views/Tutorials";
+import Tutoring from "../views/Tutoring";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
         path: "/tutorials/:id",
         name: "tutorial",
         component: Tutorial,
+      },
+      {
+        path: "/tutoring",
+        name: "tutoring",
+        component: Tutoring
       },
       {
         path: "/user/:id",
