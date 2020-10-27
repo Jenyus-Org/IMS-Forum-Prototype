@@ -28,6 +28,8 @@
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="ruler" />
             <span class="link-title">Internships</span>
+            </div>
+        </router-link>
         <router-link class="nav-link" exact-active-class="active" to="tutoring">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="school" />
