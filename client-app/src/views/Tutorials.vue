@@ -6,22 +6,24 @@
         <div class="description-block">
           <div class="text-container">
             <span class="description-title">Create your own Tutorial</span>
-            <span class="description-body"
-              >Earn Karma and profile score by creating high quality tutorials
-              for students by students</span
-            >
+            <span class="description-body">
+              Earn Karma and profile score by creating high quality tutorials
+              for students by students
+            </span>
           </div>
           <div class="create-btn-container">
-            <router-link class="btn" :to="{name: 'submitTutorial'}">Create Tutorial</router-link>
+            <router-link class="btn" :to="{ name: 'submitTutorial' }">
+              Create Tutorial
+            </router-link>
           </div>
         </div>
         <div class="description-block">
           <div class="text-container">
             <span class="description-title">Become a moderator</span>
-            <span class="description-body"
-              >Accept, deny and correct tutorial post requests. Get a profile
-              flair, priority treatment and extra profile score</span
-            >
+            <span class="description-body">
+              Accept, deny and correct tutorial post requests. Get a profile
+              flair, priority treatment and extra profile score
+            </span>
           </div>
           <div class="create-btn-container">
             <a href="" class="btn">Become Moderator</a>
@@ -155,8 +157,8 @@ export default {
     }
   }
 }
-.tutorial-view{
-  width:100%;
+.tutorial-view {
+  width: 100%;
 }
 .tutorial-container {
   display: flex;
@@ -173,6 +175,6 @@ export default {
 }
 .card {
   margin: 10px;
-  max-width:500px;
+  max-width: 500px;
 }
 </style>
