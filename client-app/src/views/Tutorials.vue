@@ -3,7 +3,7 @@
     <SearchBar />
     <div class="description-container">
       <div class="description-container">
-        <div class="description-block">
+        <div class="description-block p-3">
           <div class="text-container">
             <span class="description-title">Create your own Tutorial</span>
             <span class="description-body">
@@ -17,7 +17,7 @@
             </router-link>
           </div>
         </div>
-        <div class="description-block">
+        <div class="description-block p-3">
           <div class="text-container">
             <span class="description-title">Become a moderator</span>
             <span class="description-body">
@@ -45,6 +45,7 @@
 <script>
 import SearchBar from "@/components/SearchBar";
 import TutorialCard from "@/components/Tutorial/Card";
+
 export default {
   name: "Tutorials",
   components: {
