@@ -10,13 +10,16 @@
             <span>6520</span>
           </div>
         </div>
-        <router-link class="avatar-link" :to="'user/' + $strapi.user.id">
+        <router-link
+          class="avatar-link"
+          :to="{ name: 'user', params: { id: $strapi.user.id } }"
+        >
           <b-avatar class="mx-2"></b-avatar>
         </router-link>
       </div>
     </div>
     <div v-else class="header-content text">
-      <router-link to="/signIn">Sign In</router-link>
+      <router-link :to="{ name: 'signIn' }">Sign In</router-link>
     </div>
   </div>
 </template>
@@ -46,10 +49,44 @@ export default {
   justify-content: space-between;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: var(--dark-primary);
+  background-color: #24292e;
   height: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   top: 0;
+}
+.text {
+  align-self: center;
+  color: white;
+  a {
+    padding: 10px;
+    padding-bottom: 5px;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+.header-content {
+  flex: 1;
+  .user-details {
+    display: flex;
+    justify-content: flex-end;
+    .profile-score {
+      line-height: 1;
+      span {
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
+    .detail {
+      align-self: center;
+      padding-right: 10px;
+    }
+  }
+}
+.avatar-link {
+  padding: 0px !important;
   text-align: center;
   .text {
     align-self: center;
@@ -63,26 +100,5 @@ export default {
       }
     }
   }
-  .header-content {
-    flex: 1;
-    .user-details {
-      display: flex;
-      justify-content: flex-end;
-      .profile-score {
-        line-height: 1;
-        span {
-          padding: 5px;
-          font-size: 14px;
-        }
-      }
-      .detail {
-        align-self: center;
-        padding-right: 10px;
-      }
-    }
-  }
-}
-.avatar-link {
-  padding: 0px !important;
 }
 </style>

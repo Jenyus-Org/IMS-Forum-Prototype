@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <router-view />
+    <layout><router-view /></layout>
   </div>
 </template>
 
 <script>
+import Layout from "./components/Layout";
+
 export default {
   name: "App",
-  components: {},
+  components: { Layout },
   methods: {
     toggleNav() {
       if (this.$store.state.activeNav) {
