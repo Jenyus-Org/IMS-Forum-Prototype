@@ -21,6 +21,7 @@ import {
   faCode,
   faEdit,
   faSave,
+  faRuler,
   faComment,
   faExpand,
   faShare,
@@ -41,6 +42,7 @@ library.add(faPlus);
 library.add(faCode);
 library.add(faEdit);
 library.add(faSave);
+library.add(faRuler);
 library.add(faComment);
 library.add(faExpand);
 library.add(faShare);
