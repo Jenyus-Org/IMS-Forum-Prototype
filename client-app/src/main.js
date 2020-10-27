@@ -1,35 +1,34 @@
 import "@babel/polyfill";
-import "mutationobserver-shim";
-import Vue from "vue";
-import "./plugins/bootstrap-vue";
-import "./plugins/axios";
-import "./plugins/strapi";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faUserSecret,
-  faCogs,
-  faHome,
   faChalkboard,
-  faSearch,
+  faCode,
+  faCogs,
+  faComment,
+  faEdit,
+  faExclamation,
+  faExpand,
   faHeart,
+  faHome,
   faPaw,
   faPlus,
-  faCode,
-  faEdit,
-  faSave,
   faRuler,
-  faComment,
-  faExpand,
-  faShare,
-  faExclamation,
+  faSave,
   faSchool,
+  faSearch,
+  faShare,
+  faUserSecret,
 } from "@fortawesome/free-solid-svg-icons";
-
 import "highlight.js/styles/atom-one-dark.css";
+import "mutationobserver-shim";
+import Vue from "vue";
+import App from "./App.vue";
+import "./plugins/axios";
+import "./plugins/bootstrap-vue";
+import "./plugins/strapi";
+import router from "./router";
+import store from "./store";
+import "./utils/filters";
 
 library.add(faUserSecret);
 library.add(faCogs);
