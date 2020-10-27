@@ -2,13 +2,13 @@
   <Sidebar>
     <div class="sidenav-links">
       <div class="align-top">
-        <router-link class="nav-link" exact-active-class="active" to="home">
+        <router-link class="nav-link" exact-active-class="active" :to="{ name: 'home' }">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="home" />
             <span class="link-title">Home</span>
           </div>
         </router-link>
-        <router-link class="nav-link" exact-active-class="active" to="forum">
+        <router-link class="nav-link" exact-active-class="active" :to="{ name: 'forum' }">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="comment" />
             <span class="link-title">Forum</span>
@@ -17,29 +17,29 @@
         <router-link
           class="nav-link"
           exact-active-class="active"
-          to="tutorials"
+          :to="{ name: 'tutorials' }"
         >
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="chalkboard" />
             <span class="link-title">Tutorial</span>
           </div>
         </router-link>
-        <router-link class="nav-link" exact-active-class="active" to="internships">
+        <router-link class="nav-link" exact-active-class="active" :to="{ name: 'internships' }">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="ruler" />
             <span class="link-title">Internships</span>
             </div>
         </router-link>
-        <router-link class="nav-link" exact-active-class="active" to="tutoring">
+        <router-link class="nav-link" exact-active-class="active" :to="{ name: 'tutoring' }">
           <div class="navlink-container">
             <FontAwesomeIcon class="icon fa-sm" icon="school" />
             <span class="link-title">Tutoring</span>
           </div>
         </router-link>
       </div>
-      <div class="align-bottom">
+      <div class="align-bottom" v-if="$strapi.user">
         <div class="settings">
-          <router-link class="nav-link-settings" to="user">
+          <router-link class="nav-link-settings" :to="{ name: 'user', params: { id: $strapi.user.id } }">
             <div class="navlink-container">
               <FontAwesomeIcon class="icon fa-lg cogs" icon="cogs" />
               <span class="link-title">Settings</span>

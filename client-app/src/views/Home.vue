@@ -101,9 +101,7 @@
                   {{ feat.submission.description }}
                 </p>
                 <p class="btn-container">
-                  <router-link
-                    class="btn"
-                    :to="feat.type + '/' + feat.submission.id"
+                  <router-link class="btn" :to="getFeatRoute(feat)"
                     >Learn more</router-link
                   >
                 </p>
@@ -141,6 +139,22 @@ export default {
   name: "Home",
   components: {
     FontAwesomeIcon,
+  },
+  methods: {
+    getFeatRoute(feat) {
+      switch (feat.type) {
+        case "project":
+          return {
+            name: "project",
+            params: { id: feat.submission.id },
+          };
+        case "tutorial":
+          return {
+            name: "tutorial",
+            params: { id: feat.submission.id },
+          };
+      }
+    },
   },
   data() {
     return {
@@ -207,7 +221,7 @@ export default {
         },
         {
           id: 3,
-          type: "tutorials",
+          type: "tutorial",
           submission: {
             id: 2,
             name: "VueTutorial2",
@@ -216,7 +230,7 @@ export default {
         },
         {
           id: 4,
-          type: "tutorials",
+          type: "tutorial",
           submission: {
             id: 3,
             name: "VueTutorial3",
@@ -225,7 +239,7 @@ export default {
         },
         {
           id: 5,
-          type: "tutorials",
+          type: "tutorial",
           submission: {
             id: 4,
             name: "VueTutorial4",
@@ -234,7 +248,7 @@ export default {
         },
         {
           id: 6,
-          type: "tutorials",
+          type: "tutorial",
           submission: {
             id: 5,
             name: "VueTutorial5",
@@ -364,7 +378,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    height:100%;
+    height: 100%;
     .title {
       flex: 1;
       background-color: var(--dark-primary);

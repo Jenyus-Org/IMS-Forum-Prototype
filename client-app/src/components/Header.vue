@@ -10,13 +10,16 @@
             <span>6520</span>
           </div>
         </div>
-        <router-link class="avatar-link" :to="'user/' + $strapi.user.id">
+        <router-link
+          class="avatar-link"
+          :to="{ name: 'user', params: { id: $strapi.user.id } }"
+        >
           <b-avatar class="mx-2"></b-avatar>
         </router-link>
       </div>
     </div>
     <div v-else class="header-content text">
-      <router-link to="/signIn">Sign In</router-link>
+      <router-link :to="{ name: 'signIn' }">Sign In</router-link>
     </div>
   </div>
 </template>
@@ -46,7 +49,7 @@ export default {
   justify-content: space-between;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #24292E;
+  background-color: #24292e;
   height: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
   top: 0;
@@ -82,8 +85,8 @@ export default {
     }
   }
 }
-.avatar-link{
-  padding:0px !important;
+.avatar-link {
+  padding: 0px !important;
   text-align: center;
   .text {
     align-self: center;
