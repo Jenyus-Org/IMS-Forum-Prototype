@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss">
+.b-sidebar {
+  top: 50px;
+}
 .b-sidebar > .b-sidebar-body {
   overflow-y: auto;
   background-color: #f5f5f5;
