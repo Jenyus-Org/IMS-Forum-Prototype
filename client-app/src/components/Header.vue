@@ -84,5 +84,18 @@ export default {
 }
 .avatar-link{
   padding:0px !important;
+  text-align: center;
+  .text {
+    align-self: center;
+    a {
+      padding: 10px;
+      padding-bottom: 5px;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
 }
 </style>

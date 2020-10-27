@@ -1,12 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Forum from "../views/Forum";
 import General from "../views/General";
-import Tutorials from "../views/Tutorials";
-import Tutorial from "../views/Tutorial";
-import CreateTutorial from "../views/CreateTutorial";
+import Home from "../views/Home";
+import Post from "../views/Post";
 import Settings from "../views/Settings";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
+import SubmitTutorial from "../views/SubmitTutorial";
+import Tutorial from "../views/Tutorial";
+import Tutorials from "../views/Tutorials";
+import Internships from "../views/Internships";
+import Tutoring from "../views/Tutoring";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,6 +21,11 @@ const routes = [
     name: "General",
     component: General,
     children: [
+      {
+        path: "/home",
+        name: "home",
+        component: Home
+      },
       {
         path: "/about",
         name: "About",
@@ -25,19 +36,39 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/About.vue"),
       },
       {
+        path: "/forum",
+        name: "forum",
+        component: Forum
+      },
+      {
+        path: "/post/:id",
+        name: "post",
+        component:Post,
+      },
+      {
         path: "/tutorials",
         name: "tutorials",
-        component: Tutorials
+        component: Tutorials,
+      },
+      {
+        path: "/tutorials/submit",
+        name: "submitTutorial",
+        component: SubmitTutorial,
       },
       {
         path: "/tutorials/:id",
-        name:"tutorial",
-        component: Tutorial
+        name: "tutorial",
+        component: Tutorial,
       },
       {
-        path: "/create-tutorial",
-        name: "create-tutorial",
-        component: CreateTutorial
+        path: "/internships",
+        name: "internships",
+        component: Internships,
+      },
+      {
+        path: "/tutoring",
+        name: "tutoring",
+        component: Tutoring
       },
       {
         path: "/user/:id",
@@ -54,7 +85,7 @@ const routes = [
   {
     path: "/register",
     name: "Register",
-    component: SignUp
+    component: SignUp,
   },
 ];
 

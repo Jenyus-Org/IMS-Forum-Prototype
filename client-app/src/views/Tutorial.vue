@@ -26,10 +26,7 @@
         <img class="mr-3" :src="activetutorial.language" alt="language" />
         <img class="mr-3" :src="activetutorial.framework" alt="framework" />
       </div>
-      <b-card title="Contents" class="mx-0 my-4 px-2 py-0">
-        <b-card-text v-if="post" v-html="post.tocHTML"></b-card-text>
-      </b-card>
-      <div v-if="post" v-html="post.bodyHTML"></div>
+      <div v-html="activetutorial.body"></div>
     </div>
   </div>
 </template>
@@ -40,11 +37,6 @@ export default {
   name: "tutorial",
   components: {
     FontAwesomeIcon,
-  },
-  data() {
-    return {
-      post: null,
-    };
   },
   computed: {
     activetutorial: function () {
@@ -80,11 +72,18 @@ export default {
       return fetchedTutorial;
     },
   },
-  mounted() {
-    this.$strapi.posts.get(1).then((post) => (this.post = post));
-  },
 };
 </script>
+
+<style lang="scss">
+pre > code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+</style>
 
 <style scoped lang="scss">
 .tutorial-overview {
