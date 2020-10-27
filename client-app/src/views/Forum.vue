@@ -1,14 +1,14 @@
 <template>
   <div class="forum">
     <div class="post-container" v-for="post in posts" :key="post.id">
-      <div class="post">
+      <div class="post" style="height: 100%">
         <div class="left-align">
           <span
             ><FontAwesomeIcon class="icon fa-sm" icon="paw" />
             {{ post.likes }}</span
           >
         </div>
-        <div class="right-align">
+        <div class="right-align d-flex flex-column">
           <div class="author">
             <div class="d-flex justify-content-between">
               <span>
@@ -29,11 +29,10 @@
               </span>
             </div>
           </div>
-          <div class="body">
-            {{ post.body.substring(0, 250) }}
-            {{ post.body.substring(250) && "..." }}
+          <div class="body" style="flex: 1">
+            {{ post.body | long }}
           </div>
-          <div class="footer">
+          <div class="footer pb-1 my-1 ml-2">
             <div class="actions">
               <span>
                 {{ post.comments.length }}
