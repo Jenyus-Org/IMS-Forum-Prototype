@@ -1,8 +1,7 @@
 <template>
-  <div class="tutorial-block">
+  <div class="tutorial-block p-1">
     <div class="title-container">
-      <div class="placeholder"></div>
-      <div class="tutorial-title">{{ tutorial.name }}</div>
+      <div class="tutorial-title text-left ml-3">{{ tutorial.name }}</div>
     </div>
     <div class="body-container">
       <div class="display-image-container">
@@ -27,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-container">
+    <div class="footer-container align-items-center p-1">
       <div class="details">
         <img :src="tutorial.imgsrc" alt="complexity" />
         <img :src="tutorial.imgsrc" alt="type" />
