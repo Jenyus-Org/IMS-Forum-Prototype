@@ -46,7 +46,7 @@
       </sodipodi:namedview>
       <g id="layer6" inkscape:label="Cantons" inkscape:groupmode="layer">
         <path
-		@click="select({name:'OW', colour: '#E6E6E6'})"
+          @click="select({ name: 'OW', colour: '#E6E6E6' })"
           id="OW"
           class="canton"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
@@ -71,7 +71,7 @@
 
         <path
           id="NW"
-		@click="select( { name: 'NW', colour: '#B3B3B3' } )"
+          @click="select({ name: 'NW', colour: '#B3B3B3' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccsssccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path2580"
           fill="#B3B3B3"
@@ -92,7 +92,7 @@
 
         <path
           id="ZG"
-		@click="select( { name: 'ZG', colour: '#B3B3B3' } )"
+          @click="select({ name: 'ZG', colour: '#B3B3B3' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccssscsssssssssscccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3458"
           fill="#B3B3B3"
@@ -115,7 +115,7 @@
 
         <path
           id="LU"
-		@click="select( { name: 'LU', colour: '#808080' } )"
+          @click="select({ name: 'LU', colour: '#808080' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3429"
           fill="#808080"
@@ -148,7 +148,7 @@
 
         <path
           id="AG"
-		@click="select( { name: 'AG', colour: '#E6E6E6' } )"
+          @click="select({ name: 'AG', colour: '#E6E6E6' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccsssscsssssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssc"
           inkscape:label="#path3775"
           fill="#E6E6E6"
@@ -213,7 +213,7 @@
 
         <path
           id="BL"
-		@click="select( { name: 'BL', colour: '#999999' } )"
+          @click="select({ name: 'BL', colour: '#999999' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssccccccccccccccccccccccccccccccccccccccccccccccccccccccssc"
           inkscape:label="#path3573"
           fill="#999999"
@@ -245,7 +245,7 @@
 
         <path
           id="VS"
-		@click="select( { name: 'VS', colour: '#E6E6E6' } )"
+          @click="select({ name: 'VS', colour: '#E6E6E6' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccscccccccccccccccccccccccccsssssssssssssssssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path2579"
           fill="#E6E6E6"
@@ -293,7 +293,7 @@
 
         <path
           id="BE"
-		@click="select( { name: 'BE', colour: '#CCCCCC' } )"
+          @click="select({ name: 'BE', colour: '#CCCCCC' })"
           sodipodi:nodetypes="ccccccccccccccccccccssssssssssssscccscccccsssssssssssssssssccccccccccccccccccsssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsssssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccscccccccccccccccccccccccscscccccccccccccsccccc"
           inkscape:label="#path2577"
           fill="#CCCCCC"
@@ -366,7 +366,7 @@
 
         <path
           id="SO"
-		@click="select( { name: 'SO', colour: '#808080' } )"
+          @click="select({ name: 'SO', colour: '#808080' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccsssssssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsssssssssssssssccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccccccccscc"
           inkscape:label="#path3741"
           fill="#808080"
@@ -416,7 +416,7 @@
 
         <path
           id="JU"
-		@click="select( { name: 'JU', colour: '#B3B3B3' } )"
+          @click="select({ name: 'JU', colour: '#B3B3B3' })"
           sodipodi:nodetypes="cssssssccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3583"
           fill="#B3B3B3"
@@ -449,7 +449,7 @@
         />
         <path
           id="VD"
-		@click="select( { name: 'VD', colour: '#808080' } )"
+          @click="select({ name: 'VD', colour: '#808080' })"
           inkscape:label="#path3824"
           fill="#808080"
           stroke="#22241C"
@@ -496,7 +496,7 @@
 
         <path
           id="FR"
-		@click="select( { name: 'FR', colour: '#999999' } )"
+          @click="select({ name: 'FR', colour: '#999999' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccssssssssssssssssscccccscccssssssssssssscccccccccccccccccccccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3531"
           fill="#999999"
@@ -540,7 +540,7 @@
 
         <path
           id="BS"
-		@click="select( { name: 'BS', colour: '#CCCCCC' } )"
+          @click="select({ name: 'BS', colour: '#CCCCCC' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccc"
           inkscape:label="#path3716"
           fill="#CCCCCC"
@@ -554,7 +554,7 @@
 
         <path
           id="GE"
-		@click="select( { name: 'GE', colour: '#B3B3B3' } )"
+          @click="select({ name: 'GE', colour: '#B3B3B3' })"
           sodipodi:nodetypes="cccccccccccccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3853"
           fill="#B3B3B3"
@@ -574,7 +574,7 @@
 
         <path
           id="NE"
-		@click="select( { name: 'NE', colour: '#E6E6E6' } )"
+          @click="select({ name: 'NE', colour: '#E6E6E6' })"
           sodipodi:nodetypes="cssssssssccccccccccccccccccccccccccccccccccccccccccccccccccccccccsssssssccccccccccccccccccccc"
           inkscape:label="#path2553"
           fill="#E6E6E6"
@@ -599,7 +599,7 @@
 
         <path
           id="GR"
-		@click="select( { name: 'GR', colour: '#E6E6E6' } )"
+          @click="select({ name: 'GR', colour: '#E6E6E6' })"
           sodipodi:nodetypes="ccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccssssccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssccssssscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3788"
           fill="#E6E6E6"
@@ -662,7 +662,7 @@
         />
         <path
           id="SG"
-		@click="select( { name: 'SG', colour: '#808080' } )"
+          @click="select({ name: 'SG', colour: '#808080' })"
           fill="#808080"
           stroke="#22241C"
           stroke-width="0.5"
@@ -722,7 +722,7 @@
 
         <path
           id="SZ"
-		@click="select( { name: 'SZ', colour: '#E6E6E6' } )"
+          @click="select({ name: 'SZ', colour: '#E6E6E6' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3472"
           fill="#E6E6E6"
@@ -749,7 +749,7 @@
 
         <path
           id="AI"
-		@click="select( { name: 'AI', colour: '#999999' } )"
+          @click="select({ name: 'AI', colour: '#999999' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3711"
           fill="#999999"
@@ -767,7 +767,7 @@
 
         <path
           id="AR"
-		@click="select( { name: 'AR', colour: '#CCCCCC' } )"
+          @click="select({ name: 'AR', colour: '#CCCCCC' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3719"
           fill="#CCCCCC"
@@ -788,7 +788,7 @@
 
         <path
           id="TG"
-		@click="select( { name: 'TG', colour: '#B3B3B3' } )"
+          @click="select({ name: 'TG', colour: '#B3B3B3' })"
           sodipodi:nodetypes="csssssssssssssssssssssssssscccccccccccccccccccccccccccccccsscccccccccccccccccccccccccccsssccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3650"
           fill="#B3B3B3"
@@ -825,7 +825,7 @@
 
         <path
           id="ZH"
-		@click="select( { name: 'ZH', colour: '#CCCCCC' } )"
+          @click="select({ name: 'ZH', colour: '#CCCCCC' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccssscsssscccccccccccccccccccccccccccccccccccssssscsssssssssssssscssssssssssssssscsssssssssssscccccccccccccccccccccccccccccccsscccccccccccccccccccccccccccssscccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3546"
           fill="#CCCCCC"
@@ -873,7 +873,7 @@
         />
         <path
           id="SH"
-		@click="select( { name: 'SH', colour: '#999999' } )"
+          @click="select({ name: 'SH', colour: '#999999' })"
           inkscape:label="#path3624"
           fill="#999999"
           stroke="#22241C"
@@ -912,7 +912,7 @@
 
         <path
           id="GL"
-		@click="select( { name: 'GL', colour: '#B3B3B3' } )"
+          @click="select({ name: 'GL', colour: '#B3B3B3' })"
           sodipodi:nodetypes="cssssscccccccccccccccccccccccccccccccccccccccccccccccscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3777"
           fill="#B3B3B3"
@@ -937,7 +937,7 @@
 
         <path
           id="UR"
-		@click="select( { name: 'UR', colour: '#999999' } )"
+          @click="select({ name: 'UR', colour: '#999999' })"
           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3800"
           fill="#999999"
@@ -966,7 +966,7 @@
 
         <path
           id="TI"
-		@click="select( { name: 'TI', colour: '#808080' } )"
+          @click="select({ name: 'TI', colour: '#808080' })"
           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
           inkscape:label="#path3896"
           fill="#808080"
@@ -4348,33 +4348,38 @@
 <script>
 export default {
   name: "SwissMap",
-  data(){
-	return{
-	selectedCanton: {
-		name: "",
-		colour: "",
-	},
-	}
+  data() {
+    return {
+      selectedCanton: {
+        name: "",
+        colour: "",
+      },
+    };
   },
-  methods:{
-	select(canton){
-		if(this.selectedCanton.name != ""){
-			document.getElementById(this.selectedCanton.name).style.fill = this.selectedCanton.colour;
-		}
-		document.getElementById(canton.name).style.fill = "var(--dark-primary)";
-		this.selectedCanton = canton;
-	}
-  }
+  methods: {
+    select(canton) {
+      if (this.selectedCanton.name != "") {
+        document.getElementById(
+          this.selectedCanton.name
+        ).style.fill = this.selectedCanton.colour;
+      }
+      document.getElementById(canton.name).style.fill = "var(--dark-primary)";
+      this.selectedCanton = canton;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-#layer6{
-	path{
-		&:hover{
-			fill:var(--dark-primary);
-			cursor:pointer;
-		}
-	}
+#layer6 {
+  path {
+    &:hover {
+      fill: var(--dark-primary);
+      cursor: pointer;
+    }
+  }
+}
+.swiss-map {
+  text-align: center;
 }
 </style>
