@@ -84,6 +84,9 @@ export default {
       padding-right: 10px;
     }
   }
+  &.text {
+    text-align: right;
+  }
 }
 .avatar-link {
   padding: 0px !important;

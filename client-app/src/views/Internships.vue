@@ -1,36 +1,34 @@
 <template>
   <div class="internships">
-    <SwissMap  style="padding-bottom:5px;"/>
-    <p class="title">Internships</p>
+    <b-jumbotron
+      header="Internships"
+      lead="Find your next dream job here."
+    >
+    </b-jumbotron>
+    <SwissMap style="padding-bottom: 5px" />
     <div
       class="card-container d-flex flex-wrap justify-content-between p-2 align-content-center"
     >
-      <div
+      <b-card
         v-for="intern in internships"
         :key="intern.id"
-        class="card m-2"
+        class="m-2 internship-card"
         style="flex: 1"
+        :title="intern.company"
       >
-        <div class="header">
-          <div class="header-content">
-            <span style="padding-left: 5px; padding-right: 5px">{{
-              intern.company
-            }}</span>
+        <div class="card-content">
+          <div class="d-flex justify-content-between mb-4">
+            <h6 class="card-subtitle text-muted m-0">{{ intern.type }}</h6>
+            <b-card-text>
+              <div class="d-flex flex-column">
+                <span>{{ intern.pay | chf }}</span>
+                <span class="font-weight-bold">{{ intern.location }}</span>
+              </div>
+            </b-card-text>
           </div>
+          <b-card-text>{{ intern.description }}</b-card-text>
         </div>
-        <div class="body">
-          <div class="offer-details-container">
-            <p>{{ intern.type }}</p>
-            <div class="offer-details">
-              <span>{{ intern.pay }} ChF</span>
-              <span>{{ intern.location }}</span>
-            </div>
-          </div>
-          <p style="padding-left: 5px; padding-right: 5px">
-            {{ intern.description }}
-          </p>
-        </div>
-      </div>
+      </b-card>
     </div>
   </div>
 </template>
@@ -54,16 +52,16 @@ export default {
           type: "Fullstack",
           location: "Alpnach",
           description:
-            "Work description for internship at Company1 filler filler filler filler filler filler filler filler filler filler filler",
+            "Description 1\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Iure delectus distinctio impedit ratione, velit nulla quasi, ea quod nobis eaque modi aliquid enim quis vel quaerat optio et harum laboriosam.",
         },
         {
           id: 2,
           company: "Company2",
           pay: "1500",
-          type: "FrontEnd",
+          type: "Frontend",
           location: "Baden",
           description:
-            "Work description for internship at Company2 filler filler filler filler filler filler filler filler filler filler filler filler filler filler",
+            "Description 2\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Iure delectus distinctio impedit ratione, velit nulla quasi, ea quod nobis eaque modi aliquid enim quis vel quaerat optio et harum laboriosam.",
         },
       ],
     };
@@ -77,28 +75,20 @@ export default {
   margin-bottom: 10px;
   margin-left: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  .title {
-    background-color: var(--dark-primary);
-    color: var(--white);
-    padding: 10px;
-  }
-  .header {
-    padding-top: 10px;
-    .header-content {
-      font-weight: bold;
-      color: var(--dark-primary);
+
+  .internship-card {
+    .card-body {
+      padding: 0;
     }
-  }
-  .body {
-    .offer-details-container {
-      display: flex;
-      justify-content: space-between;
-      margin: 5px;
-      .offer-details {
-        display: flex;
-        flex-direction: column;
-        text-align: right;
-      }
+
+    .card-title {
+      background-color: var(--dark-primary);
+      color: var(--white);
+      padding: 10px;
+    }
+
+    .card-content {
+      padding: 1.25rem;
     }
   }
 }
