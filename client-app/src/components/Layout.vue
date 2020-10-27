@@ -4,7 +4,7 @@
     <Navigation />
     <b-container fluid>
       <main role="main">
-        <router-view />
+        <slot></slot>
       </main>
       <Footer />
     </b-container>
